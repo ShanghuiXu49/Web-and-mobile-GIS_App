@@ -67,10 +67,6 @@
 
 
    function addBasicMarkers() {
-   var testMarkerPink = L.AwesomeMarkers.icon({
-     icon: 'play',
-     markerColor: 'pink
-   });
 
    // create a geoJSON feature -
    var geojsonFeature = {
@@ -85,6 +81,11 @@
      }
    };
 
+   var testMarkerPink = L.AwesomeMarkers.icon({
+     icon: 'play',
+     markerColor: 'pink
+   });
+
    // and add it to the map
    L.geoJSON(geojsonFeature, {
         pointToLayer: function (feature, latlng) {
@@ -92,7 +93,7 @@
         }
    }).addTo(mymap).bindPopup("<b>"+geojsonFeature.properties.name+" "+geojsonFeature.properties.popupContent+"<b>");
 
-  } // end code to add the basic markers
+   } // end code to add the basic markers
 
 
 window.onload = loadLeafletMap;
