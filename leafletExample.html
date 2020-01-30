@@ -43,22 +43,23 @@
         } //end code to add the leaflet map
 
 
-function addBasicMarkers() {
-// create a geoJSON feature -
-var geojsonFeature = {
-   "type": "Feature",
-   "properties": {
-     "name": "London",
-     "popupContent": "This is where UCL is based"
-   },
-   "geometry": {
-     "type": "Point",
-     "coordinates": [-0.118092, 51.509865]
-   }
-};
-// and add it to the map
-L.geoJSON(geojsonFeature).addTo(mymap).bindPopup("<b>"+geojsonFeature.properties.name+""+geojsonFeature.properties.popupContent+"<b>");
+   function addBasicMarkers() {
+   // create a geoJSON feature -
+   var geojsonFeature = {
+     "type": "Feature",
+     "properties": {
+       "name": "London",
+       "popupContent": "This is where UCL is based"
+     },
+     "geometry": {
+       "type": "Point",
+       "coordinates": [-0.118092, 51.509865]
+     }
+   };
+   // and add it to the map
+   L.geoJSON(geojsonFeature).addTo(mymap).bindPopup("<b>"+geojsonFeature.properties.name+""+geojsonFeature.properties.popupContent+"<b>");
 
+  } // end code to add the basic markers
 
 
 window.onload = loadLeafletMap;
