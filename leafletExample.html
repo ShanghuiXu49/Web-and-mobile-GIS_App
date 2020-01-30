@@ -37,6 +37,8 @@
 			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 		id: 'mapbox.streets'
 	}).addTo(mymap);
+
+
     var geojsonFeature = {
         "type": "Feature",
         "properties": {
@@ -45,7 +47,7 @@
         },
         "geometry": {
             "type": "Point",
-            "coordinates": [-0.118092, 51.509865],
+            "coordinates": [-0.133583, 51.524776],
         }
     };
 
@@ -54,12 +56,16 @@
         markerColor: 'pink'
     });
 
-    L.geoJSON(geojsonFeature, {
-        pointToLayer: function (feature, latlng) {
-            return L.marker(latlng, {icon:testMarkerPink});
-        }
-    }).addTo(mymap).bindPopup("<b>"+geojsonFeature.properties.name+" "+geojsonFeature.properties.popupContent+"<b>");
+    L.geoJSON(geojsonFeature).addTo(mymap).bindPopup("<b>"+geojsonFeature.properties.name+""+geojsonFeature.properties.popupContent+"<b>");
 
+    L.geoJSON(geojsonFeature, {
+      pointToLayer: function (feature, latlng) {
+        return L.marker(latlng, {icon:testMarkerPink});
+      }
+    }).addTo(mymap).bindPopup("<b>"+geojsonFeature.properties.name+"
+    "+geojsonFeature.properties.popupContent+"<b>");
+
+    
 
 </script>
 
