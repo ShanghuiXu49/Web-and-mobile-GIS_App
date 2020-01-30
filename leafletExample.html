@@ -22,6 +22,18 @@
 
 	var mymap; // global variable to store the map
 
+        // create a custom popup as a global variable
+        var popup = L.popup();
+        
+        // create an event detector to wait for the user's click event and then use the popup to show themwhere they clicked
+        // note that you don't need to do any complicated maths to convert screen coordinates to real world coordiantes - the Leaflet API does this for you
+        function onMapClick(e) {
+                 popup
+                        .setLatLng(e.latlng)
+                        .setContent("You clicked the map at " + e.latlng.toString())
+                        .openOn(mymap);
+        }
+
 
         function loadLeafletMap() {
         mymap = L.map('mapid').setView([51.505, -0.09], 13);
@@ -36,6 +48,9 @@
 			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 		id: 'mapbox.streets'
 	}).addTo(mymap);
+
+        // now add the click event detector to the map
+        mymap.on('click', onMapClick);
 
         // now call the code to add the markers
         addBasicMarkers();
