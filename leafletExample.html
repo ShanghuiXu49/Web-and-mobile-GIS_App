@@ -8,6 +8,7 @@
    integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA=="
    crossorigin=""></script>
 
+
 <script src="js/basicMap.js"></script> 
 <script src="js/earthquakes.js"></script>
 
@@ -36,8 +37,6 @@
 
 <script>
 
-  
-//code to load the map when the page is loaded
 document.addEventListener('DOMContentLoaded', function() { 
   loadMap(); 
 }, false); 
@@ -49,7 +48,7 @@ function loadMap() {
 function removeEarthquakeData() { 
   alert("Earthquake data will be removed");
   mymap.removeLayer( earthquakelayer );
-}// end of loadMap
+}
 
 </script>
 

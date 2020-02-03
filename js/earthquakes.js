@@ -1,4 +1,5 @@
-var popup = L.popup();
+  // create a custom popup as a global variable
+  var popup = L.popup();
 
   // create an event detector to wait for the user's click event and then use the popup to show them where they clicked 
   // note that you don't need to do any complicated maths to convert screen coordinates to real world coordiantes - the Leaflet API does this for you
