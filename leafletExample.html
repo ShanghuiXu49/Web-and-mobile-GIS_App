@@ -30,6 +30,8 @@
 
 <button id="loadEarthquakeData" name="loadEarthquakeData" onclick="getEarthquakeData ()">Click here to load the Earthquake data </button>
 
+<button id="removeEarthquakeData" name="removeEarthquakeData" onclick="removeEarthquakeData()">Click here to remove the Earthquake data </button>
+
 <script>
 
   var mymap; // global variable to store the map
@@ -165,6 +167,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function loadMap() { 
   loadLeafletMap();  
+}
+
+function removeEarthquakeData() { 
+  alert("remove the earthquake data here"); 
 }
 
 </script>
