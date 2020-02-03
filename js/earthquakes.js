@@ -1,4 +1,6 @@
- 
+ // load the map 
+    var mymap; // global variable to store the map
+
   // note that you don't need to do any complicated maths to convert screen coordinates to real world coordiantes - the Leaflet API does this for you
   var earthquakeLayer; 
   function getEarthquakeData() { 
@@ -33,11 +35,6 @@
       } // end of the inner function 
     }); // end of the ajax request 
   } // end of the getEarthquakeData function
-
-
-  function loadLeafletMap() {
-      mymap = L.map('mapid').setView([51.505, -0.09], 13);
-  } //end code to add the leaflet map
 
   var testMarkerRed = L.AwesomeMarkers.icon({ 
     icon: 'play', 
