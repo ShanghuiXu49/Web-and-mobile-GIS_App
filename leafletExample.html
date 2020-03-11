@@ -20,7 +20,7 @@
     <script src="js/earthquakes.js"></script>
     <script src="js/busstops.js"></script>
     <script src="js/POI.js"></script>
-
+    <script src="js/highway.js"></script>
     <!-- the following CSS is used to set the size of the Map -->
     <style type="text/css">
         #mapid {
@@ -61,6 +61,15 @@
 <button id="removePOIData" name="removePOIData"
         onclick="removePOIData()"
 >Click here to remove the POI data
+</button>
+
+<button id="loadHighwayData" name="loadHighwayData" onclick="getHighwayData()"
+>Click here to load the highway data
+</button>
+
+<button id="removeHighwayData" name="removeHighwayData"
+        onclick="removeHighwayData()"
+>Click here to remove the highway data
 </button>
 
 <script>
