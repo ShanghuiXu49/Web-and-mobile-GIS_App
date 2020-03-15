@@ -23,32 +23,43 @@ function loadLeafletMap() {
 
 }//end code to add the leaflet map
 
-
+// creat a test marker
+var testMarkerPink = L.AwesomeMarkers.icon({
+    icon: 'play',
+    markerColor: 'pink'
+});
 
 function addBasicMarkers() {
-
-    // create a geoJSON feature -
-    var geojsonFeature = {
-        "type": "Feature",
-        "properties": {
-            "name": "London",
-            "popupContent": "This is where UCL is based"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-0.132630, 51.522449]
-        }
-    };
-
-    // and add geoJSON feature using test pink marker to the map
-    L.geoJSON(geojsonFeature, {
-        pointToLayer: function (feature, latlng) {
-            return L.marker(latlng, {icon: testMarkerPink});
-        }
-    }).addTo(mymap).bindPopup("<b>" + geojsonFeature.properties.name + " " + geojsonFeature.properties.popupContent + "<b>");
-
-
+    L.marker([51.5, -0.09]).addTo(mymap)
+        .bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+    // add a circle
+    L.circle([51.508, -0.11], 500, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+    }).addTo(mymap).bindPopup("I am a circle.");
+    // add a polygon with 3 end points (i.e. a triangle)
+    var myPolygon = L.polygon([
+        [51.509, -0.08],
+        [51.503, -0.06],
+        [51.51, -0.047]
+    ],{
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+    }).addTo(mymap).bindPopup("I am a polygon.");
 } // end code to add the basic markers
 
+// create a custom popup
+var popup = L.popup();
 
 
+// create an event detector to wait for the user's click event and then use the popup to show them where they clicked
+// note that you don't need to do any complicated maths to convert screen coordinates to real world coordiantes
+// - the Leaflet API does this for you
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(mymap);
+}
