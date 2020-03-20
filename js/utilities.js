@@ -3,10 +3,10 @@ var httpsPortNumberApp;
 
 function getPorts(){
 
-	 var portURL = "res/ports.xml";
-	
-	 $.get({url: portURL, success: function(result){
-	 	console.log(result); // check that the data is correct
+         var portURL = "res/ports.xml";
+        
+         $.get({url: portURL, success: function(result){
+                console.log(result); // check that the data is correct
         var parser = new DOMParser();
         var doc = parser.parseFromString(result, "application/xml");
         console.log(doc);
@@ -15,7 +15,7 @@ function getPorts(){
         console.log("Port API : " + httpsPortNumberAPI);
         console.log("Port APP : " + httpsPortNumberApp);
 
-		}, // end of the inner function
+                }, // end of the inner function
         async: false
-	}); // end of the ajax request
+        }); // end of the ajax request
 } // end of the outer function
