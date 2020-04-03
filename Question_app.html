@@ -22,11 +22,41 @@
 <label for='correct_answer'>Correct Answer</label><input type='text' size='50' id='correct_answer'/><br />
 
 
+<p>Click here to upload the data</p>
+<button id="startUpload" onclick="startDataUpload()">Start Setting Questions Upload</button>
 <br />
 <br />
-<br />
+<div id="dataUploadResult">The result of the upload goes here</div>
 <br />
 <br />
 
+<hr>
+<hr>
+
+<label for="deleteID">Delete ID</label><input type="text" size="25" id="deleteID"/><br />
+<button id="startDelete" onclick="deleteRecord()">Delete Record</button>
+<div id="dataDeleteResult">The result of the upload goes here</div>
+
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script> 
+<script src="js/utilities.js"></script> 
+<script src="js/dataUpload.js"> </script>
+<!-- get the port numbers -->
+<script>
+function loadMap() {
+	getPorts();
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+	console.log("listener domcontentloaded");
+	loadMap();
+}, false);
+
+</script>
 
 </body>
