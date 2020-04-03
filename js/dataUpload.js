@@ -48,3 +48,21 @@ function dataUploaded(data) {
     // change the DIV to show the response
     document.getElementById("dataUploadResult").innerHTML = JSON.stringify(data);
 }
+
+
+function deleteRecord() {
+	var deleteID = document.getElementById("deleteID").value;
+	var deleteString = "id="+deleteID + "&port_id="+httpsPortNumberAPI;
+	var serviceUrl= "https://developer.cege.ucl.ac.uk:"+ httpsPortNumberAPI+"/deleteQuestionData";
+	$.ajax({
+	    url: serviceUrl,
+	    crossDomain: true,
+	    type: "POST",
+	    success: function(data){console.log(data); dataDeleted(data);},
+	    data: deleteString
+});	
+}
+
+function dataDeleted(data){
+    document.getElementById("dataDeleteResult").innerHTML = JSON.stringify(data);
+}
