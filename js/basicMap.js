@@ -20,7 +20,6 @@ function loadLeafletMap() {
 
     // now call the code to add the markers
     addBasicMarkers();
-    getFormData()
 
 }//end code to add the leaflet map
 
@@ -49,58 +48,3 @@ function onMapClick(e) {
         .openOn(mymap);
 }
 
-
-//Retrieve the data using AJAX
-function getFormData() { 
-
-$.ajax({url:"https://developer.cege.ucl.ac.uk:"+ httpsPortNumberAPI + 
-"/getGeoJSON/formdata/location", 
-    crossDomain: true, 
-success: function(result){ 
-        formDataResponse(result); 
-    }}); //end of the AJAX call 
-} // end of getFormData
-
-
-//Process the data and create some HTML as a string that you then add to the popup for each point on the map
-function formDataResponse(result){ 
-    var formData = result.responseText; 
-    loadFormData(formData); 
-}
-
-// keep the layer global so that we can automatically pop up a 
-// pop-up menu on a point if necessary 
-// we can also use this to determine distance for the proximity alert
-
-var formLayer; 
-function loadFormData(formData) {
-
-    // convert the text received from the server to JSON 
-    var formJSON = JSON.parse(formData);
-
-    // load the geoJSON layer 
-    formLayer = L.geoJson(formJSON,
-        {
-            // use point to layer to create the points 
-            pointToLayer: function (feature, latlng)
-            {
-                // in this case, we build an HTML DIV string 
-                // using the values in the data
-                var htmlString = "<DIV id='popup'"+ feature.properties.id + "><h2>" + feature.properties.name + "</h2><br>";
-                htmlString = htmlString + "<h3>"+feature.properties.surname + "</h3><br>";
-                htmlString = htmlString + "<input type='radio' name='answer' id ='"+feature.properties.id+"_1'/>"+feature.properties.module+"<br>";
-                htmlString = htmlString + "<input type='radio' name='answer' id ='"+feature.properties.id+"_2'/>"+feature.properties.language+"<br>"; 
-                htmlString = htmlString + "<input type='radio' name='answer' id ='"+feature.properties.id+"_3'/>"+feature.properties.lecturetime+"<br>"; 
-                htmlString = htmlString + "<input type='radio' name='answer' id ='"+feature.properties.id+"_4'/>"+feature.properties.port_id+"<br>"; 
-                htmlString = htmlString + "<button onclick='checkAnswer(" + feature.properties.id + ");return false;'>Submit Answer</button>";
-
-                // now include a hidden element with the answer 
-                // in this case the answer is alwasy the first choice 
-                // for the assignment this will of course vary - you can use feature.properties.correct_answer 
-                htmlString = htmlString + "<div id=answer" + feature.properties.id + " hidden>1</div>"; 
-                htmlString = htmlString + "</div>"; 
-                return L.marker(latlng).bindPopup(htmlString); 
-            }, 
-        }).addTo(mymap); 
-    mymap.fitBounds(formLayer.getBounds()); 
-}
