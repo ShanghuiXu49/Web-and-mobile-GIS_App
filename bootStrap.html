@@ -31,6 +31,7 @@
     <!-- adapted from: https://blackrockdigital.github.io/startbootstrap-sb-admin-2/ -->
 
   </head>
+
   <body id="page-top">
 
     <div id="wrapper">
@@ -51,7 +52,7 @@
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getQuestionData();" aria-expanded="true" aria-controls="collapseOne">
             <!-- the next line is the cog image -->
             <i class="fas fa-fw fa-cog"></i>
-            <span>Load Question points</span>
+            <span>Add questions</span>
           </a>
 
         </li>
@@ -92,22 +93,70 @@
        </ul>
        <!-- End of Sidebar -->
 
-       <div id="content-wrapper" class="d-flex flex-column">
-        <div id="mapid" style="width: 1400px; height: 800px;"></div>
+        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="mapid" style="width: 600px; height: 400px;"></div>
+        <div id="ajaxtest" style="width: 1600px; height: 20px;">
+
+
+<head>
+<title>UCL POP QUIZ</title>
+</head>
+<body>
+<h1> UCL POP QUIZ App: Questions Setting</h1>
+
+<div>
+
+<br />
+<br />
+<label for='latitude'>Latitude</label><input type='text' size='25' id='latitude'/><br />
+<label for='longitude'>Longitude</label><input type='text' size='25' id='longitude'/><br />
+<br />
+<label for='question_title'>Question Title</label><input type='text' size='50' id='question_title'/><br />
+<label for='question_text'>Question Text</label><input type='text' size='50' id='question_text'/><br />
+<br />
+<label for='answer_1'>Answer1</label><input type='text' size='25' id='answer_1'/><br />
+<label for='answer_2'>Answer2</label><input type='text' size='25' id='answer_2'/><br />
+<label for='answer_3'>Answer3</label><input type='text' size='25' id='answer_3'/><br />
+<label for='answer_4'>Answer4</label><input type='text' size='25' id='answer_4'/><br />
+<label for='correct_answer'>Correct Answer</label><input type='text' size='50' id='correct_answer'/><br />
+
+
+<p>Click here to upload the data</p>
+<button id="startUpload" onclick="startDataUpload()">Start Setting Questions Upload</button>
+<br />
+<br />
+<div id="dataUploadResult">The result of the upload goes here</div>
+<br />
+<br />
+
+<hr>
+
+<label for="deleteID">Delete ID</label><input type="text" size="25" id="deleteID"/><br />
+<button id="startDelete" onclick="deleteRecord()">Delete Record</button>
+<div id="dataDeleteResult">The result of the upload goes here</div>
+
+
+
       </div>
       <!-- End of Main Content -->
     </div>
     <!-- end of wrapper -->
   </body>
+
+
   <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>  
 
+  <!-- Bootstrap core JavaScript-->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
   <script src="js/leaflet.awesome-markers.js"></script>
   <script src="js/basicMap.js"></script>
   <script src="js/getQuestionData.js"></script>
-
+  <script src="js/utilities.js"></script>
+  <script src="js/sb-admin-2.js"></script>
   <!-- the following CSS is used to set the size of the Map -->
   <style type="text/css">
       #mapid {
@@ -115,16 +164,7 @@
           height: 180px;
       }
   </style>
-
-  <!-- Bootstrap core JavaScript-->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-
-  <script src="js/sb-admin-2.js"></script>
-
-<!-- functionality to get ports -->
-<!-- load utilities.js -->
-<script src="js/utilities.js"></script> 
-
+ 
 <script>
   function loadMap() {
   getPorts();
@@ -135,7 +175,6 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log("listener domcontentloaded");
   loadMap();
 }, false);
-
 </script>
 
   </html>
