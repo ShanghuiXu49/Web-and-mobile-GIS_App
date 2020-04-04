@@ -28,15 +28,30 @@ var testMarkerPink = L.AwesomeMarkers.icon({
 
 // create a custom popup
 var popup = L.popup();
-
+var coord;
+var latitude;
+var longitude;
 
 // create an event detector to wait for the user's click event and then use the popup to show them where they clicked
 // note that you don't need to do any complicated maths to convert screen coordinates to real world coordiantes
 // - the Leaflet API does this for you
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(mymap);
-}
+function onMapClick(e){
+    popup.setLatLng(e.latlng);
+    
+    coord = e.latlng.toString();
+    coord = coord.substr(7, coord.length - 1);   //limited the coordinates display way
+    coord = coord.split(')')[0]; 
+    
+    latitude = coord.split(',')[0];
+
+    longitude = coord.split(',')[1];
+    
+    popup.setContent('Coordinates: ' + latitude + ' ,  ' + longitude);
+    popup.openOn(mymap);
+    
+    document.getElementById('latitude').value=latitude
+    document.getElementById('longitude').value=longitude
+    }
+
+    mymap.on('click', onMapClick);
 
