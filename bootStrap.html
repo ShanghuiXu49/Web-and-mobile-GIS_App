@@ -49,10 +49,20 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item d-none d-lg-block" >
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getQuestionData();" aria-expanded="true" aria-controls="collapseOne">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="alert('Question added here');" aria-expanded="true" aria-controls="collapseOne">
             <!-- the next line is the cog image -->
             <i class="fas fa-fw fa-cog"></i>
             <span>Add questions</span>
+          </a>
+
+        </li>
+
+
+        <li class="nav-item d-none d-sm-block d-md-none" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getQuestionData();" aria-expanded="true" aria-controls="collapseOne">
+            <!-- the next line is the cog image -->
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Load Quiz Points</span>
           </a>
 
         </li>
@@ -97,7 +107,7 @@
         <div id="mapid" style="width: 600px; height: 400px;"></div>
         <div id="ajaxtest" style="width: 1600px; height: 20px;">
 
-
+<li class="nav-item d-none d-lg-block" >
 <head>
 <title>UCL POP QUIZ</title>
 </head>
@@ -134,7 +144,7 @@
 <label for="deleteID">Delete ID</label><input type="text" size="25" id="deleteID"/><br />
 <button id="startDelete" onclick="deleteRecord()">Delete Record</button>
 <div id="dataDeleteResult">The result of the upload goes here</div>
-
+</li>
 
 
       </div>
