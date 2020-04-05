@@ -25,5 +25,8 @@ function loadQuestionData(result) {
 	mymap.fitBounds(questionLayer.getBounds()); 
 }
 
-
+function removeQuestionData() { 
+	alert("Question data will be removed"); 
+	mymap.removeLayer( questionLayer ); 
+}
 
