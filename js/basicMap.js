@@ -53,5 +53,5 @@ function onMapClick(e){
     document.getElementById('longitude').value=longitude
     }
 
-    mymap.on('click', onMapClick);
+
 
