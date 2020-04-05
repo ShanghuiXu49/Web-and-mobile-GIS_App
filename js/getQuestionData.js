@@ -146,9 +146,9 @@ function closestFormPoint(position) {
     // go through each point one by one
     // and measure the distance to Warren Street
     // for the closest point show the pop up of that point
-    var minDistance = 1;
+    var minDistance = 0.3;
     var closestFormPoint = 0;
-    
+
     // for this example, use the latitude/longitude of warren street
     // in your assignment replace this with the user's location    var userlng = -0.139924;
     formLayer.eachLayer(function(layer) {
