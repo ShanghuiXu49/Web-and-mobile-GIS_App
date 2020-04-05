@@ -23,7 +23,7 @@ function startDataUpload() {
 	try{		//NB try and catch is a couple, should use together or it doesn't work, adapted from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
 	if (question_title == "" || question_text == "" || answer_1 == "" || answer_2 == "" || answer_3 == "" || answer_4 == "" || correct_answer == "") throw 'Please fill in all the blankets.'
 	if (correct_answer != "1" && correct_answer != "2" && correct_answer != "3" && correct_answer != "4") throw 'Please modify your correct answer, the correct answer should be choosen from the number 1/2/3/4.'
-		
+	
 	alert (postString);
 	processData(postString);		
 	}	catch(err) {

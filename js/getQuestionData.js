@@ -79,7 +79,10 @@ function loadFormData(formData) {
     mymap.fitBounds(formLayer.getBounds());
 }
 
-
+var answer;
+var correct_Answer;
+var answerSelected;
+var postString;
 function checkAnswer(questionID) {
     // get the answer from the hidden div 
     // NB - do this BEFORE you close the pop-up as when you close the pop-up the DIV is destroyed 
@@ -89,8 +92,12 @@ function checkAnswer(questionID) {
     var answerSelected = 0; 
     for (var i=1; i < 5; i++) { 
         if (document.getElementById(questionID+"_"+i).checked){ 
-            answerSelected = i; 
-        } 
+            answerSelected = i;
+            postString = "port_id=" + httpsPortNumberAPI;
+            postString = postString + '&question_id=' + questionID;
+            postString = postString + "&answer_selected=" + i;
+            postString = postString + '&correct_answer=' + answer;
+            }  
         if ((document.getElementById(questionID+"_"+i).checked) && (i == answer)) { 
             alert ("Well done"); 
             correct_Answer = true; 
@@ -101,10 +108,33 @@ function checkAnswer(questionID) {
     } 
 
     // now close the popup 
-    mymap.closePopup(); 
-
+    mymap.closePopup();
+    startAnswerupload()
     // the code to upload the answer to the server would go here 
     // call an AJAX routine using the data 
     // the answerSelected variable holds the number of the answer 
     //that the user picked 
+}
+
+function startAnswerupload() {
+    alert ("start answer upload");
+    alert (postString);
+    processAnswers(postString);
+}
+
+function processAnswers(postString) {
+    var serviceUrl= "https://developer.cege.ucl.ac.uk:"+ httpsPortNumberAPI+"/uploadAnswers"
+   $.ajax({
+    url: serviceUrl,
+    crossDomain: true,
+    type: "POST",
+    success: function(data){console.log(data); answerUploaded(data);},
+    data: postString
+}); 
+}
+
+// create the code to process the response from the data server
+function answerUploaded(data) {
+    // change the DIV to show the response
+    document.getElementById("dataUploadResult").innerHTML = JSON.stringify(data);
 }
