@@ -68,7 +68,7 @@
 
 
         <li class="nav-item d-block d-sm-none" >
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getQuestionData();" aria-expanded="true" aria-controls="collapseOne">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getQuestionData();trackLocation();" aria-expanded="true" aria-controls="collapseOne">
             <!-- the next line is the cog image -->
             <i class="fas fa-fw fa-cog"></i>
             <span>Load Quiz Points</span>
@@ -199,7 +199,6 @@
   function loadMap() {
   getPorts();
   loadLeafletMap();
-  trackLocation();
 }
 
 document.addEventListener('DOMContentLoaded', function() {
