@@ -138,3 +138,36 @@ function answerUploaded(data) {
     // change the DIV to show the response
     document.getElementById("dataUploadResult").innerHTML = JSON.stringify(data);
 }
+
+
+// The closestFormPoint function is used to achieve Proximity Alert
+function closestFormPoint(position) {
+    // take the leaflet formdata layer
+    // go through each point one by one
+    // and measure the distance to Warren Street
+    // for the closest point show the pop up of that point
+    var minDistance = 1;
+    var closestFormPoint = 0;
+    
+    // for this example, use the latitude/longitude of warren street
+    // in your assignment replace this with the user's location    var userlng = -0.139924;
+    formLayer.eachLayer(function(layer) {
+        var distance = calculateDistance(position.coords.latitude, position.coords.longitude,layer.getLatLng().lat, layer.getLatLng().lng, 'K');
+        if (distance < minDistance){
+            minDistance = distance;
+            closestFormPoint = layer.feature.properties.id;
+        }
+    });
+            // for this to be a proximity alert, the minDistance must be
+            // closer than a given distance - you can check that here
+            // using an if statement
+            // show the popup for the closest point
+    formLayer.eachLayer(function(layer) {
+        if (layer.feature.properties.id == closestFormPoint){
+            layer.openPopup();
+
+            // mymap.setView([position.coords.latitude, position.coords.longitude], 13);
+
+        }
+    });
+}

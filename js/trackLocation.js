@@ -14,5 +14,32 @@ function showPosition(position) {
     }
     userMarker = L.marker([position.coords.latitude, position.coords.longitude],{icon:testMarkerPink}).addTo(mymap)
         .bindPopup("<b>You are Here!</b>");
+    getDistance();
+    mymap.setView([position.coords.latitude,position.coords.longitude],13)
+}
 
+// Calculate the distance from the user to quiz points
+function getDistance() {
+    navigator.geolocation.getCurrentPosition(closestFormPoint);
+}
+
+// calculate distance given two sets of coordinates
+function calculateDistance(lat1, lon1, lat2, lon2, unit) {
+    var radlat1 = Math.PI * lat1 / 180;
+    var radlat2 = Math.PI * lat2 / 180;
+    var radlon1 = Math.PI * lon1 / 180;
+    var radlon2 = Math.PI * lon2 / 180;
+    var theta = lon1 - lon2;
+    var radtheta = Math.PI * theta / 180;
+    var subAngle = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+    subAngle = Math.acos(subAngle);
+    subAngle = subAngle * 180 / Math.PI; // convert the degree value returned by acos back to degrees from radians
+    dist = (subAngle / 360) * 2 * Math.PI * 3956; // ((subtended angle in degrees)/360) * 2 * pi * radius )
+    if (unit == "K") {
+        dist = dist * 1.609344;
+    } // convert miles to km
+    if (unit == "N") {
+        dist = dist * 0.8684;
+    } // convert miles to nautical miles return dist;
+    return dist;
 }
