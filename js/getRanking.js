@@ -12,5 +12,5 @@ function getRanking() {
 
 
 function processCorrectAnswer(result){ 
-    alert("Your current ranking is No." +  result);
+    alert("Your current ranking is " +  result);
 }
