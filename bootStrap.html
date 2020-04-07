@@ -30,7 +30,27 @@
     <title>Bootstrap Simplified Template</title>
     <!-- adapted from: https://blackrockdigital.github.io/startbootstrap-sb-admin-2/ -->
 
+    <!-- set the style for the bar graph -->
+    <style>
+    .bar {
+      fill: #71EEB8;
+    }
+
+    .bar:hover {
+      fill: slateblue;
+    }
+
+    .axis-x path {
+      display: none;
+    }
+
+    .axis text {
+      font-weight: bold;
+    }
+    </style>
+    
   </head>
+
 
   <body id="page-top">
 
@@ -137,6 +157,7 @@
         <div id="mapid" style="width: 600px; height: 400px;"></div>
         <div id="ajaxtest" style="width: 1600px; height: 20px;">
 
+
 <li class="nav-item d-none d-lg-block" >
 <head>
 <title>UCL POP QUIZ</title>
@@ -176,7 +197,7 @@
 <div id="dataDeleteResult">The result of the upload goes here</div>
 </li>
 
-
+<svg width="350" height="350"></svg>
       </div>
       <!-- End of Main Content -->
     </div>

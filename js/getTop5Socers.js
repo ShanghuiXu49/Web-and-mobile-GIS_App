@@ -9,7 +9,7 @@ const svg     = d3.select("svg"),
       g       = svg.append("g")
                    .attr("transform", `translate(${margin.left},${margin.top})`);
 
-d3.json("http://developer.cege.ucl.ac.uk:" + httpsPortNumberAPI + '/getTop5Scorers').then(data => {
+d3.json("https://developer.cege.ucl.ac.uk:" + httpsPortNumberAPI + '/getTop5Scorers').then(data => {
   data = data.array_to_json;
   console.log(data);
   x.domain(data.map(d => d.port_id));
