@@ -4,13 +4,13 @@ function getCorrectAnswer() {
     url: serviceUrl,
     crossDomain: true,
     type: "GET",
-    success: function(num_questions){
-    	console.log(num_questions); 
-    	processCorrectAnswer(num_questions);
+    success: function(result){
+    	console.log(result); 
+    	processCorrectAnswer(result);
     }}); //end of the AJAX call
 }// end of getCorrectAnswer
 
 
-function processCorrectAnswer(num_questions){ 
- alert("You have answered " + num_questions + " questions correctly!");
- }
+function processCorrectAnswer(result){ 
+    alert("You have answered " + result + " questions correctly!");
+}
