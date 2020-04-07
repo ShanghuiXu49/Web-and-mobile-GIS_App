@@ -25,6 +25,15 @@ var testMarkerPink = L.AwesomeMarkers.icon({
     markerColor: 'pink'
 });
 
+var testMarkerRed = L.AwesomeMarkers.icon({
+icon: 'play',
+markerColor: 'red'
+});
+
+var testMarkerGreen = L.AwesomeMarkers.icon({
+icon: 'play',
+markerColor: 'green'
+});
 
 // create a custom popup
 var popup = L.popup();
