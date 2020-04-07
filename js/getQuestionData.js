@@ -97,7 +97,8 @@ function checkAnswer(questionID) {
             postString = postString + '&question_id=' + questionID;
             postString = postString + "&answer_selected=" + i;
             postString = postString + '&correct_answer=' + answer;
-            }  
+            } 
+
         if ((document.getElementById(questionID+"_"+i).checked) && (i == answer)) { 
             alert ("Well done"); 
             correct_Answer = true;
@@ -110,15 +111,15 @@ function checkAnswer(questionID) {
             })
         }
     }
-    if (correct_Answer === false) { 
-        // they didn't get it right 
-        alert("Better luck next time"); 
-        formLayer.eachLayer(function(layer){
-            if (layer.feature.properties.id == questionID){
-                return L.marker([layer.getLatLng().lat, layer.getLatLng().lng], {icon: testMarkerRed}).addTo(mymap); 
-            }
-        })
-    }
+        if (correct_Answer === false) { 
+            // they didn't get it right 
+            alert("Better luck next time"); 
+            formLayer.eachLayer(function(layer){
+                if (layer.feature.properties.id == questionID){
+                    return L.marker([layer.getLatLng().lat, layer.getLatLng().lng], {icon: testMarkerRed}).addTo(mymap); 
+                }
+            })
+        }
 
     // now close the popup 
     mymap.closePopup();
