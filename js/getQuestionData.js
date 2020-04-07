@@ -103,6 +103,9 @@ function checkAnswer(questionID) {
             alert ("Well done"); 
             correct_Answer = true;
 
+            //Alert the correct answer number that the user get so far
+            getCorrectAnswer();
+
             //Change the puiz point marker to green if the user answer is correct
             formLayer.eachLayer(function(layer){
                 if (layer.feature.properties.id == questionID){
@@ -113,7 +116,12 @@ function checkAnswer(questionID) {
     }
         if (correct_Answer === false) { 
             // they didn't get it right 
-            alert("Better luck next time"); 
+            alert("Better luck next time");
+
+            //Alert the correct answer number that the user get so far
+            getCorrectAnswer(); 
+            
+            //Change the puiz point marker to green if the user answer is correct
             formLayer.eachLayer(function(layer){
                 if (layer.feature.properties.id == questionID){
                     return L.marker([layer.getLatLng().lat, layer.getLatLng().lng], {icon: testMarkerRed}).addTo(mymap); 
