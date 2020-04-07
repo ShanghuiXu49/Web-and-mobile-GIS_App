@@ -114,7 +114,7 @@
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getTop5Socers();" aria-expanded="true" aria-controls="collapseOne">
             <!-- the next line is the cog image -->
             <i class="fas fa-fw fa-cog"></i>
-            <span>Show the Top 5 scorers</span>
+            <span>Show the Top 5 Scorers</span>
           </a>
         </li>
 
@@ -131,6 +131,22 @@
             <!-- the next line is the cog image -->
             <i class="fas fa-fw fa-cog"></i>
             <span>All user Participation Rate</span>
+          </a>
+        </li>
+
+        <li class="nav-item d-none d-lg-block" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getLastWeekPoints();" aria-expanded="true" aria-controls="collapseOne">
+            <!-- the next line is the cog image -->
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Show All Question Points</span>
+          </a>
+        </li>
+
+        <li class="nav-item d-none d-lg-block" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="removeLastWeekPoints();" aria-expanded="true" aria-controls="collapseOne">
+            <!-- the next line is the cog image -->
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Remove All Question Points</span>
           </a>
         </li>
 
@@ -233,6 +249,8 @@
   <script src="js/getRanking.js"> </script>
   <script src="js/getTop5Socers.js"> </script>
   <script src="js/getParticipationRate.js"> </script>
+ <script src="js/getLastWeekPoints.js"> </script>
+
   <!-- the following CSS is used to set the size of the Map -->
   <style type="text/css">
       #mapid {
