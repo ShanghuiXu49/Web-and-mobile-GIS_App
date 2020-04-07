@@ -100,12 +100,25 @@ function checkAnswer(questionID) {
             }  
         if ((document.getElementById(questionID+"_"+i).checked) && (i == answer)) { 
             alert ("Well done"); 
-            correct_Answer = true; 
-            } 
-    } if (correct_Answer === false) { 
+            correct_Answer = true;
+
+            //Change the puiz point marker to green if the user answer is correct
+            formLayer.eachLayer(function(layer){
+                if (layer.feature.properties.id == questionID){
+                    return L.marker([layer.getLatLng().lat, layer.getLatLng().lng], {icon: testMarkerGreen}).addTo(mymap); 
+                }
+            })
+        }
+    }
+    if (correct_Answer === false) { 
         // they didn't get it right 
         alert("Better luck next time"); 
-    } 
+        formLayer.eachLayer(function(layer){
+            if (layer.feature.properties.id == questionID){
+                return L.marker([layer.getLatLng().lat, layer.getLatLng().lng], {icon: testMarkerRed}).addTo(mymap); 
+            }
+        })
+    }
 
     // now close the popup 
     mymap.closePopup();
