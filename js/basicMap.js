@@ -43,6 +43,11 @@ var testMarkerOrange = L.AwesomeMarkers.icon({
     markerColor: 'orange'
 });
 
+var testMarkerBlue = L.AwesomeMarkers.icon({
+    icon: 'play',
+    markerColor: 'blue'
+});
+
 // create a custom popup
 var popup = L.popup();
 var coord;

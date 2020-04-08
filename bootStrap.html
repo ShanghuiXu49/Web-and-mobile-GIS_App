@@ -126,11 +126,19 @@
           </a>
         </li>
 
-                <li class="nav-item d-block d-sm-none" >
+        <li class="nav-item d-block d-sm-none" >
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="removeClosest5Points();" aria-expanded="true" aria-controls="collapseOne">
             <!-- the next line is the cog image -->
             <i class="fas fa-fw fa-cog"></i>
             <span>Remove Closest 5 Points</span>
+          </a>
+        </li>
+
+        <li class="nav-item d-block d-sm-none" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getLast5Question();" aria-expanded="true" aria-controls="collapseOne">
+            <!-- the next line is the cog image -->
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Show Last 5 Questions</span>
           </a>
         </li>
 
@@ -171,14 +179,6 @@
             <!-- the next line is the cog image -->
             <i class="fas fa-fw fa-cog"></i>
             <span>5 Hardest Questions</span>
-          </a>
-        </li>
-
-        <li class="nav-item d-none d-lg-block" >
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="removeDifficultQuestions();" aria-expanded="true" aria-controls="collapseOne">
-            <!-- the next line is the cog image -->
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Remove 5 Hardest Questions</span>
           </a>
         </li>
 
@@ -284,7 +284,7 @@
   <script src="js/getLastWeekPoints.js"> </script>
   <script src="js/getClosest5Points.js"> </script>
   <script src="js/getDifficultQuestions.js"> </script>
-  
+  <script src="js/getLast5Question.js"> </script>
   <!-- the following CSS is used to set the size of the Map -->
   <style type="text/css">
       #mapid {
