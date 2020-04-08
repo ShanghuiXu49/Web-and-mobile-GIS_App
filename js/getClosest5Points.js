@@ -3,8 +3,10 @@ function removeClosest5Points() {
     mymap.removeLayer(closestPointLayer);
 };
 
+
+
 function getClosest5Points() {
-    var serviceUrl = "https://developer.cege.ucl.ac.uk:"+ httpsPortNumberAPI + "/getClosest5Points/" + position.coords.longitude + '/'+ position.coords.latitude;
+    var serviceUrl = "https://developer.cege.ucl.ac.uk:"+ httpsPortNumberAPI + "/getClosest5Points/" + user_longitude + '/'+ user_latitude;
    $.ajax({
     url: serviceUrl,
     crossDomain: true,

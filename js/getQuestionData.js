@@ -82,7 +82,7 @@ function checkAnswer(questionID) {
             getCorrectAnswer();
 
             //Change the puiz point marker to green if the user answer is correct
-            formLayer.eachLayer(function(layer){
+            questionLayer.eachLayer(function(layer){
                 if (layer.feature.properties.id == questionID){
                     return L.marker([layer.getLatLng().lat, layer.getLatLng().lng], {icon: testMarkerGreen}).addTo(mymap); 
                 }
@@ -97,7 +97,7 @@ function checkAnswer(questionID) {
             getCorrectAnswer(); 
             
             //Change the puiz point marker to green if the user answer is correct
-            formLayer.eachLayer(function(layer){
+            questionLayer.eachLayer(function(layer){
                 if (layer.feature.properties.id == questionID){
                     return L.marker([layer.getLatLng().lat, layer.getLatLng().lng], {icon: testMarkerRed}).addTo(mymap); 
                 }

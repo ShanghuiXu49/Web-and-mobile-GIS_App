@@ -6,11 +6,11 @@ function getRanking() {
     type: "GET",
     success: function(result){
     	console.log(result); 
-    	processCorrectAnswer(result);
+    	processRanking(result);
     }}); //end of the AJAX call
 }// end of getCorrectAnswer
 
 
-function processCorrectAnswer(result){ 
+function processRanking(result){ 
     alert("Your current ranking is " +  result);
 }

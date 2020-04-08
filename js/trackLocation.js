@@ -1,4 +1,6 @@
 var userMarker;
+var user_longitude;
+var user_latitude;
 
 function trackLocation() { 
 	if (navigator.geolocation) { 
@@ -8,6 +10,7 @@ function trackLocation() {
 	} 
 } 
 
+
 function showPosition(position) {
     if (userMarker) {
         mymap.removeLayer(userMarker)
@@ -15,6 +18,8 @@ function showPosition(position) {
     userMarker = L.marker([position.coords.latitude, position.coords.longitude],{icon:testMarkerPink}).addTo(mymap)
         .bindPopup("<b>You are Here!</b>");
     mymap.setView([position.coords.latitude,position.coords.longitude],13)
+    user_longitude = position.coords.longitude
+    user_latitude = position.coords.latitude
 }
 
 // Calculate the distance from the user to quiz points
