@@ -118,6 +118,22 @@
           </a>
         </li>
 
+        <li class="nav-item d-block d-sm-none" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getClosest5Points();" aria-expanded="true" aria-controls="collapseOne">
+            <!-- the next line is the cog image -->
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Show Closest 5 Points</span>
+          </a>
+        </li>
+
+                <li class="nav-item d-block d-sm-none" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="removeClosest5Points();" aria-expanded="true" aria-controls="collapseOne">
+            <!-- the next line is the cog image -->
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Remove Closest 5 Points</span>
+          </a>
+        </li>
+
         <li class="nav-item d-none d-lg-block" >
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getParticipationRateUser();" aria-expanded="true" aria-controls="collapseOne">
             <!-- the next line is the cog image -->
@@ -249,8 +265,9 @@
   <script src="js/getRanking.js"> </script>
   <script src="js/getTop5Socers.js"> </script>
   <script src="js/getParticipationRate.js"> </script>
- <script src="js/getLastWeekPoints.js"> </script>
-
+  <script src="js/getLastWeekPoints.js"> </script>
+  <script src="js/getClosest5Points.js"> </script>
+  
   <!-- the following CSS is used to set the size of the Map -->
   <style type="text/css">
       #mapid {

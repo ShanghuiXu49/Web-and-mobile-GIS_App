@@ -1,5 +1,3 @@
-var client;
-
 function removeQuestionData() {
     alert("Question data will be removed");
     mymap.removeLayer(questionLayer);
@@ -150,7 +148,7 @@ function closestFormPoint(position) {
 
     // for this example, use the latitude/longitude of warren street
     // in your assignment replace this with the user's location    var userlng = -0.139924;
-    formLayer.eachLayer(function(layer) {
+    questionLayer.eachLayer(function(layer) {
         var distance = calculateDistance(position.coords.latitude, position.coords.longitude,layer.getLatLng().lat, layer.getLatLng().lng, 'K');
         if (distance < minDistance){
             minDistance = distance;
@@ -161,7 +159,7 @@ function closestFormPoint(position) {
             // closer than a given distance - you can check that here
             // using an if statement
             // show the popup for the closest point
-    formLayer.eachLayer(function(layer) {
+    questionLayer.eachLayer(function(layer) {
         if (layer.feature.properties.id == closestFormPoint){
             layer.openPopup();
 
