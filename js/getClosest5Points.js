@@ -1,8 +1,9 @@
+var closestPointLayer;
+
 function removeClosest5Points() {
     alert("Closest 5 Quiz Points will be removed");
     mymap.removeLayer(closestPointLayer);
 };
-
 
 
 function getClosest5Points() {
@@ -18,12 +19,12 @@ function getClosest5Points() {
 }// end of getCorrectAnswer
 
 // we can also use this to determine distance for the proximity alert
-var closestPointLayer;
+
 
 function loadClosestPoint(result) {
 
 // load the geoJSON layer
-    questionLayer = L.geoJson(result,
+    closestPointLayer = L.geoJson(result,
         {       
 
 // use point to layer to create the points
@@ -48,5 +49,5 @@ function loadClosestPoint(result) {
             return L.marker(latlng, {icon: testMarkerOrange}). bindPopup(htmlString);
             },
         }).addTo(mymap);
-    mymap.fitBounds(closestPointLayer.getBounds());
-}
+};
+
