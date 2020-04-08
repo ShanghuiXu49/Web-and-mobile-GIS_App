@@ -142,6 +142,14 @@
           </a>
         </li>
 
+        <li class="nav-item d-block d-sm-none" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getUnanswered();" aria-expanded="true" aria-controls="collapseOne">
+            <!-- the next line is the cog image -->
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Show Unanswered Questions</span>
+          </a>
+        </li>
+
         <li class="nav-item d-none d-lg-block" >
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getParticipationRateUser();" aria-expanded="true" aria-controls="collapseOne">
             <!-- the next line is the cog image -->
@@ -253,6 +261,8 @@
   <script src="js/getClosest5Points.js"> </script>
   <script src="js/getDifficultQuestions.js"> </script>
   <script src="js/getLast5Question.js"> </script>
+  <script src="js/getUnanswered.js"> </script>
+
   <!-- the following CSS is used to set the size of the Map -->
   <style type="text/css">
       #mapid {

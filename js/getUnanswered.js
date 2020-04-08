@@ -1,30 +1,30 @@
-var closestPointLayer;
+var unansweredLayer;
 
-function removeClosest5Points() {
-    alert("Closest 5 Quiz Points will be removed");
-    mymap.removeLayer(closestPointLayer);
+function removeUnanswered() {
+    alert("Unanswered Points will be removed");
+    mymap.removeLayer(unansweredLayer);
 };
 
 
-function getClosest5Points() {
-    var serviceUrl = "https://developer.cege.ucl.ac.uk:"+ httpsPortNumberAPI + "/getClosest5Points/" + user_longitude + '/'+ user_latitude;
+function getUnanswered() {
+    var serviceUrl = "https://developer.cege.ucl.ac.uk:"+ httpsPortNumberAPI + "/getUnanswered/" + httpsPortNumberAPI;
    $.ajax({
     url: serviceUrl,
     crossDomain: true,
     type: "GET",
     success: function(result){
         console.log(result); 
-        loadClosestPoint(result);
+        loadUnanswered(result);
     }}); //end of the AJAX call
 }// end of getCorrectAnswer
 
 // we can also use this to determine distance for the proximity alert
 
 
-function loadClosestPoint(result) {
+function loadUnanswered(result) {
 
 // load the geoJSON layer
-    closestPointLayer = L.geoJson(result,
+    unansweredLayer = L.geoJson(result,
         {       
 
 // use point to layer to create the points
@@ -46,9 +46,7 @@ function loadClosestPoint(result) {
             // for the assignment this will of course vary - you can use feature.properties.correct_answer
             htmlString = htmlString + "<div id=answer" + feature.properties.id + " hidden>" + feature.properties.correct_answer + "</div>";
             htmlString = htmlString + "</div>";
-            return L.marker(latlng, {icon: testMarkerOrange}). bindPopup(htmlString);
+            return L.marker(latlng, {icon: testMarkerBlue}). bindPopup(htmlString);
             },
         }).addTo(mymap);
-    mymap.fitBounds(closestPointLayer.getBounds());
 };
-
