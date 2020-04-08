@@ -19,20 +19,28 @@ function loadLeafletMap() {
     mymap.on('click', onMapClick);
 }//end code to add the leaflet map
 
-// creat a test marker
+// The user's location
 var testMarkerPink = L.AwesomeMarkers.icon({
     icon: 'play',
     markerColor: 'pink'
 });
 
+//Wrong answer
 var testMarkerRed = L.AwesomeMarkers.icon({
 icon: 'play',
 markerColor: 'red'
 });
 
+//Correct answer
 var testMarkerGreen = L.AwesomeMarkers.icon({
 icon: 'play',
 markerColor: 'green'
+});
+
+//The closest 5 quiz points
+var testMarkerOrange = L.AwesomeMarkers.icon({
+    icon: 'play',
+    markerColor: 'orange'
 });
 
 // create a custom popup

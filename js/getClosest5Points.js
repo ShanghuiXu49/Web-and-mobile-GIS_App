@@ -45,7 +45,7 @@ function loadClosestPoint(result) {
             // for the assignment this will of course vary - you can use feature.properties.correct_answer
             htmlString = htmlString + "<div id=answer" + feature.properties.id + " hidden>" + feature.properties.correct_answer + "</div>";
             htmlString = htmlString + "</div>";
-            return L.marker(latlng).bindPopup(htmlString);
+            return L.marker(latlng, {icon: testMarkerOrange}). bindPopup(htmlString);
             },
         }).addTo(mymap);
     mymap.fitBounds(closestPointLayer.getBounds());
