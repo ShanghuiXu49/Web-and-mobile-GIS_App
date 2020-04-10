@@ -1,5 +1,7 @@
 function getParticipationRateUser(){
 
+document.getElementById("getUserParticipation").innerHTML="<svg width='400' height='350'></svg> <p> My Users <br /> Red = incorrect answers; Green = correct answer; Total = answered questions </p>";
+
 const svg     = d3.select("svg"),
       margin  = {top: 20, right: 20, bottom: 30, left: 50},
       width   = +svg.attr("width")  - margin.left - margin.right,
@@ -57,7 +59,7 @@ d3.json("https://developer.cege.ucl.ac.uk:" + httpsPortNumberAPI + '/getParticip
 
 
 function getParticipationRateAll(){
-
+document.getElementById("getAllUserParticipation").innerHTML="<svg width='400' height='350'></svg> <p> All Users <br /> Red = incorrect answers; Green = correct answer; Total = answered questions </p>";
 const svg     = d3.select("svg"),
       margin  = {top: 20, right: 20, bottom: 30, left: 50},
       width   = +svg.attr("width")  - margin.left - margin.right,
