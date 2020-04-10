@@ -136,11 +136,17 @@
         </li>
 
         <li class="nav-item d-none d-md-block d-lg-none" >
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getLast5Question();" aria-expanded="true" aria-controls="collapseOne">
-            <!-- the next line is the cog image -->
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Show Last 5 Questions</span>
+            <span>Last 5 Questions</span>
           </a>
+          <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="#" onclick="getLast5Question();";>Show Last 5 Questions</a>
+              <a class="collapse-item" href="#" 
+              onclick="removeLast5Question();">Remove Last 5 Questions</a>
+            </div>
+          </div>
         </li>
 
         <li class="nav-item d-none d-md-block d-lg-none" >
