@@ -92,20 +92,17 @@
 
 
         <li class="nav-item d-none d-md-block d-lg-none" >
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getQuestionData();getDistance();" aria-expanded="true" aria-controls="collapseOne">
-            <!-- the next line is the cog image -->
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Load Quiz Points</span>
+            <span>Quiz Points</span>
           </a>
-        </li>
-
-
-        <li class="nav-item d-none d-md-block d-lg-none" >
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="removeQuestionData();" aria-expanded="true" aria-controls="collapseOne">
-            <!-- the next line is the cog image -->
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Remove Quiz Points</span>
-          </a>
+          <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="#" onclick="getQuestionData();getDistance()";>Load Quiz Points</a>
+              <a class="collapse-item" href="#" 
+              onclick="removeQuestionData();">Remove Quiz Points</a>
+            </div>
+          </div>
         </li>
 
         <li class="nav-item d-none d-md-block d-lg-none" >
@@ -125,19 +122,17 @@
         </li>
 
         <li class="nav-item d-none d-md-block d-lg-none" >
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getClosest5Points();" aria-expanded="true" aria-controls="collapseOne">
-            <!-- the next line is the cog image -->
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Show Closest 5 Points</span>
+            <span>Closest 5 Points</span>
           </a>
-        </li>
-
-        <li class="nav-item d-none d-md-block d-lg-none" >
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="removeClosest5Points();" aria-expanded="true" aria-controls="collapseOne">
-            <!-- the next line is the cog image -->
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Remove Closest 5 Points</span>
-          </a>
+          <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="#" onclick="getClosest5Points();";>Show Closest 5 Points</a>
+              <a class="collapse-item" href="#" 
+              onclick="removeClosest5Points();">Remove Closest 5 Points</a>
+            </div>
+          </div>
         </li>
 
         <li class="nav-item d-none d-md-block d-lg-none" >
