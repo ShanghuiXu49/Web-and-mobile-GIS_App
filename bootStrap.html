@@ -171,19 +171,17 @@
         </li>
 
         <li class="nav-item d-none d-lg-block" >
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getLastWeekPoints();" aria-expanded="true" aria-controls="collapseOne">
-            <!-- the next line is the cog image -->
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Show All Question Points</span>
+            <span>All Question Points</span>
           </a>
-        </li>
-
-        <li class="nav-item d-none d-lg-block" >
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="removeLastWeekPoints();" aria-expanded="true" aria-controls="collapseOne">
-            <!-- the next line is the cog image -->
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Remove All Question Points</span>
-          </a>
+          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="#" onclick="getLastWeekPoints()";>Show All Question Points</a>
+              <a class="collapse-item" href="#" 
+              onclick="removeLastWeekPoints();">Remove All Question Points</a>
+            </div>
+          </div>
         </li>
 
         <li class="nav-item d-none d-lg-block" >
