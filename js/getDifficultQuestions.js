@@ -16,13 +16,13 @@ function getDifficultQuestions() {
 function loadDifficultQuestion(result) {
     var difficultQuiz = result[0].array_to_json
     var difficultQuestionString
-
     for(var i =0;i<difficultQuiz.length;i++)
     {
         difficultQuestionString +=  "Question from: " + difficultQuiz[i].port_id + "\nQuestion Text: " + difficultQuiz[i].question_text;
-        difficultQuestionString += "\nPossible Answers: " +  ";"+ difficultQuiz[i].answer_1 + ";"+difficultQuiz[i].answer_2 + ";"+difficultQuiz[i].answer_3 + ";"+difficultQuiz[i].answer_4
+        difficultQuestionString += "\nPossible Answers: " + "1. " + difficultQuiz[i].answer_1 + " 2. " + difficultQuiz[i].answer_2 + " 3. " + difficultQuiz[i].answer_3 + " 4. " + difficultQuiz[i].answer_4;
         difficultQuestionString += "\nCorrect Answer: " + difficultQuiz[i]["answer_" + difficultQuiz[i].correct_answer]+"\n\n";
     }
     // List the 5 most difficult questions in alert
     alert(difficultQuestionString);
+
 }
