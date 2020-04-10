@@ -77,11 +77,17 @@
         </li>
 
         <li class="nav-item d-none d-lg-block" >
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getQuestionData();" aria-expanded="true" aria-controls="collapseOne">
-            <!-- the next line is the cog image -->
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Show My Questions Points</span>
+            <span>My Question Points</span>
           </a>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="#" onclick="alert('Show Question Points')";>Show Question Points</a>
+              <a class="collapse-item" href="#" 
+              onclick="alert('Delete Question Points');">Delete Question Points</a>
+            </div>
+          </div>
         </li>
 
 
