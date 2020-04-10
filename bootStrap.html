@@ -193,19 +193,24 @@
        </ul>
        <!-- End of Sidebar -->
 
-        <div id="content-wrapper" class="d-flex flex-column">
-        <div id="mapid" style="width: 1400px; height: 700px;"></div>
-        <div id="ajaxtest" style="width: 1600px; height: 20px;">
+        <div id="container grid-demo">
+          <div class="row">
+            <header class="col-md-12 text-center">
+            <h1>PUP QUIZ
+            </h1>
+            </header>
+
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+
+        <div id="mapid" style="width: 1300px; height: 700px;"></div>
+
+      </div>
+      </div>
 
 
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
     <li class="nav-item d-none d-lg-block" >
-        <head>
-        <title>UCL POP QUIZ</title>
-        </head>
-        <body>
-        <h3> UCL POP QUIZ App: Questions Setting</h3>
-
-        <div>
+      <div class="card">
 
         <label for='latitude'>Latitude</label><input type='text' size='25' id='latitude'/><br />
         <label for='longitude'>Longitude</label><input type='text' size='25' id='longitude'/><br />
@@ -227,9 +232,12 @@
         <div id="dataUploadResult">The result of the upload goes here</div>
         <br />
         <br />
-    </li>
+        <svg width="350" height="350"></svg>
+      </li>
+      </div>
+      </div>
+      </div>
 
-    <svg width="350" height="350"></svg>
       </div>
       <!-- End of Main Content -->
     </div>
