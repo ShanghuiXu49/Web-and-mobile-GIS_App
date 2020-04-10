@@ -1,4 +1,6 @@
 function getTop5Socers() {
+alert ("The graph is shown at the bottom of the web page")
+document.getElementById("getTop5Socers").innerHTML="<svg width='400' height='350'></svg> <p> The x axis is user port id;<br /> The y axis is ranking</p>";
 
 const svg     = d3.select("svg"),
       margin  = {top: 20, right: 20, bottom: 30, left: 50},
