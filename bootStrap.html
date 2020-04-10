@@ -150,11 +150,17 @@
         </li>
 
         <li class="nav-item d-none d-md-block d-lg-none" >
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getUnanswered();" aria-expanded="true" aria-controls="collapseOne">
-            <!-- the next line is the cog image -->
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Show Unanswered Questions</span>
+            <span>Unanswered Questions</span>
           </a>
+          <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="#" onclick="getUnanswered();";>Show Unanswered Q</a>
+              <a class="collapse-item" href="#" 
+              onclick="removeUnanswered();">Remove Unanswered Q</a>
+            </div>
+          </div>
         </li>
 
         <li class="nav-item d-none d-lg-block" >
