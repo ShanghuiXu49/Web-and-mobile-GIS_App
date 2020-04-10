@@ -157,19 +157,17 @@
         </li>
 
         <li class="nav-item d-none d-lg-block" >
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getParticipationRateUser();" aria-expanded="true" aria-controls="collapseOne">
-            <!-- the next line is the cog image -->
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
-            <span>My User Participation Rate</span>
+            <span>Participation Rate</span>
           </a>
-        </li>
-
-        <li class="nav-item d-none d-lg-block" >
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getParticipationRateAll();" aria-expanded="true" aria-controls="collapseOne">
-            <!-- the next line is the cog image -->
-            <i class="fas fa-fw fa-cog"></i>
-            <span>All User Participation Rate</span>
-          </a>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="#" onclick="getParticipationRateAll()";>All User Participation Rate</a>
+              <a class="collapse-item" href="#" 
+              onclick="getParticipationRateUser();">My User Participation Rate</a>
+            </div>
+          </div>
         </li>
 
         <li class="nav-item d-none d-lg-block" >
