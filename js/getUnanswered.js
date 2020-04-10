@@ -20,7 +20,7 @@ function getUnanswered() {
 
 // we can also use this to determine distance for the proximity alert
 
-
+var unansweredLayer;
 function loadUnanswered(result) {
 
 // load the geoJSON layer
@@ -49,4 +49,44 @@ function loadUnanswered(result) {
             return L.marker(latlng, {icon: testMarkerBlue}). bindPopup(htmlString);
             },
         }).addTo(mymap);
+    mymap.fitBounds(unansweredLayer.getBounds());
+    getUnansweredDistance();
 };
+
+
+// Calculate the distance from the user to quiz points
+function getUnansweredDistance() {
+    navigator.geolocation.getCurrentPosition(closestFormUnansweredPoint);
+}
+
+// The closestFormUnansweredPoint function is used to achieve Proximity Alert
+function closestFormUnansweredPoint(position) {
+    // take the leaflet formdata layer
+    // go through each point one by one
+    // and measure the distance to Warren Street
+    // for the closest point show the pop up of that point
+    var minDistance = 10;
+    var closestFormUnansweredPoint = 0;
+
+    // for this example, use the latitude/longitude of warren street
+    // in your assignment replace this with the user's location    var userlng = -0.139924;
+    unansweredLayer.eachLayer(function(layer) {
+        var distance = calculateDistance(position.coords.latitude, position.coords.longitude,layer.getLatLng().lat, layer.getLatLng().lng, 'K');
+        if (distance < minDistance){
+            minDistance = distance;
+            closestFormUnansweredPoint = layer.feature.properties.id;
+        }
+    });
+            // for this to be a proximity alert, the minDistance must be
+            // closer than a given distance - you can check that here
+            // using an if statement
+            // show the popup for the closest point
+    unansweredLayer.eachLayer(function(layer) {
+        if (layer.feature.properties.id == closestFormUnansweredPoint){
+            layer.openPopup();
+
+            // mymap.setView([position.coords.latitude, position.coords.longitude], 13);
+
+        }
+    });
+}
