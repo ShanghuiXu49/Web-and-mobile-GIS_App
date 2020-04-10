@@ -30,7 +30,27 @@
     <title>Bootstrap Simplified Template</title>
     <!-- adapted from: https://blackrockdigital.github.io/startbootstrap-sb-admin-2/ -->
 
+    <!-- set the style for the bar graph -->
+    <style>
+    .bar {
+      fill: #71EEB8;
+    }
+
+    .bar:hover {
+      fill: slateblue;
+    }
+
+    .axis-x path {
+      display: none;
+    }
+
+    .axis text {
+      font-weight: bold;
+    }
+    </style>
+
   </head>
+
 
   <body id="page-top">
 
@@ -49,7 +69,7 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item d-none d-lg-block" >
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="alert('Question added here');" aria-expanded="true" aria-controls="collapseOne">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="alert('Please fill out the form below the map');" aria-expanded="true" aria-controls="collapseOne">
             <!-- the next line is the cog image -->
             <i class="fas fa-fw fa-cog"></i>
             <span>Add questions</span>
@@ -57,32 +77,35 @@
         </li>
 
         <li class="nav-item d-none d-lg-block" >
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getQuestionData();" aria-expanded="true" aria-controls="collapseOne">
-            <!-- the next line is the cog image -->
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
             <i class="fas fa-fw fa-cog"></i>
-            <span>View Questions Points</span>
+            <span>My Question Points</span>
           </a>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="#" onclick="getQuestionData()";>Show Question Points</a>
+              <a class="collapse-item" href="#" 
+              onclick="removeQuestionData();">Delete Question Points</a>
+            </div>
+          </div>
         </li>
 
 
-        <li class="nav-item d-block d-sm-none" >
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getQuestionData();trackLocation();" aria-expanded="true" aria-controls="collapseOne">
-            <!-- the next line is the cog image -->
+        <li class="nav-item d-none d-md-block d-lg-none" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Load Quiz Points</span>
+            <span>Quiz Points</span>
           </a>
+          <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="#" onclick="getQuestionData();getDistance()";>Load Quiz Points</a>
+              <a class="collapse-item" href="#" 
+              onclick="removeQuestionData();">Remove Quiz Points</a>
+            </div>
+          </div>
         </li>
 
-
-        <li class="nav-item d-block d-sm-none" >
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="removeQuestionData();" aria-expanded="true" aria-controls="collapseOne">
-            <!-- the next line is the cog image -->
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Remove Quiz Points</span>
-          </a>
-        </li>
-
-        <li class="nav-item d-block d-sm-none" >
+        <li class="nav-item d-none d-md-block d-lg-none" >
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getRanking();" aria-expanded="true" aria-controls="collapseOne">
             <!-- the next line is the cog image -->
             <i class="fas fa-fw fa-cog"></i>
@@ -90,84 +113,154 @@
           </a>
         </li>
 
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-          <a class="nav-link collapsed"  data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <li class="nav-item d-none d-md-block d-lg-none" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getTop5Socers();" aria-expanded="true" aria-controls="collapseOne">
+            <!-- the next line is the cog image -->
             <i class="fas fa-fw fa-cog"></i>
-            <span>Menu 5</span>
+            <span>Show the Top 5 Scorers</span>
           </a>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        </li>
+
+        <li class="nav-item d-none d-md-block d-lg-none" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Closest 5 Points</span>
+          </a>
+          <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <h6 class="collapse-header">Menu 6</h6>
-              <a class="collapse-item"  onclick="alert('menu 7');">Menu 7</a>
+              <a class="collapse-item" href="#" onclick="getClosest5Points();";>Show Closest 5 Points</a>
+              <a class="collapse-item" href="#" 
+              onclick="removeClosest5Points();">Remove Closest 5 Points</a>
             </div>
           </div>
         </li>
 
+        <li class="nav-item d-none d-md-block d-lg-none" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Last 5 Questions</span>
+          </a>
+          <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="#" onclick="getLast5Question();";>Show Last 5 Questions</a>
+              <a class="collapse-item" href="#" 
+              onclick="removeLast5Question();">Remove Last 5 Questions</a>
+            </div>
+          </div>
+        </li>
 
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
+        <li class="nav-item d-none d-md-block d-lg-none" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Unanswered Questions</span>
+          </a>
+          <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="#" onclick="getUnanswered();";>Show Unanswered Q</a>
+              <a class="collapse-item" href="#" 
+              onclick="removeUnanswered();">Remove Unanswered Q</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item d-none d-lg-block" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Participation Rate</span>
+          </a>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="#" onclick="getParticipationRateAll()";>All User Participation Rate</a>
+              <a class="collapse-item" href="#" 
+              onclick="getParticipationRateUser();">My User Participation Rate</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item d-none d-lg-block" >
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Menu 8</span>
+            <span>All Question Points</span>
           </a>
           <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-             <a class="collapse-item" href="#" onclick="alert('menu 9');">Menu 9</a>          
+              <a class="collapse-item" href="#" onclick="getLastWeekPoints()";>Show All Question Points</a>
+              <a class="collapse-item" href="#" 
+              onclick="removeLastWeekPoints();">Remove All Question Points</a>
+            </div>
+          </div>
+        </li>
 
-             <a class="collapse-item" href="#" onclick="alert('menu 10');">Menu 10</a>          </div>
-
-           </div>
-         </li>
-
-
+        <li class="nav-item d-none d-lg-block" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getDifficultQuestions();" aria-expanded="true" aria-controls="collapseOne">
+            <!-- the next line is the cog image -->
+            <i class="fas fa-fw fa-cog"></i>
+            <span>5 Hardest Questions</span>
+          </a>
+        </li>
 
        </ul>
        <!-- End of Sidebar -->
 
-        <div id="content-wrapper" class="d-flex flex-column">
-        <div id="mapid" style="width: 600px; height: 400px;"></div>
-        <div id="ajaxtest" style="width: 1600px; height: 20px;">
-
-<li class="nav-item d-none d-lg-block" >
-<head>
-<title>UCL POP QUIZ</title>
-</head>
-<body>
-<h1> UCL POP QUIZ App: Questions Setting</h1>
-
-<div>
-
-<br />
-<br />
-<label for='latitude'>Latitude</label><input type='text' size='25' id='latitude'/><br />
-<label for='longitude'>Longitude</label><input type='text' size='25' id='longitude'/><br />
-<br />
-<label for='question_title'>Question Title</label><input type='text' size='50' id='question_title'/><br />
-<label for='question_text'>Question Text</label><input type='text' size='50' id='question_text'/><br />
-<br />
-<label for='answer_1'>Answer1</label><input type='text' size='25' id='answer_1'/><br />
-<label for='answer_2'>Answer2</label><input type='text' size='25' id='answer_2'/><br />
-<label for='answer_3'>Answer3</label><input type='text' size='25' id='answer_3'/><br />
-<label for='answer_4'>Answer4</label><input type='text' size='25' id='answer_4'/><br />
-<label for='correct_answer'>Correct Answer</label><input type='text' size='50' id='correct_answer'/><br />
+        <div class="container-fluid">
+          <div class="row">
+            <header class="col-md-12 text-center">
+            <h1>PUP QUIZ
+            </h1>
+            </header>
 
 
-<p>Click here to upload the data</p>
-<button id="startUpload" onclick="startDataUpload()">Start Setting Questions Upload</button>
-<br />
-<br />
-<div id="dataUploadResult">The result of the upload goes here</div>
-<br />
-<br />
 
-<hr>
+        <div id="mapid" style="width: 1400px; height: 700px;"></div>
 
-<label for="deleteID">Delete ID</label><input type="text" size="25" id="deleteID"/><br />
-<button id="startDelete" onclick="deleteRecord()">Delete Record</button>
-<div id="dataDeleteResult">The result of the upload goes here</div>
-</li>
 
+      </div>
+
+
+    <div class="container-fluid">
+    <li class="nav-item d-none d-lg-block" >
+      <div class="card">
+
+        <label for='latitude'>Latitude</label><input type='text' size='25' id='latitude'/><br />
+        <label for='longitude'>Longitude</label><input type='text' size='25' id='longitude'/><br />
+
+        <label for='question_title'>Question Title</label><input type='text' size='50' id='question_title'/><br />
+        <label for='question_text'>Question Text</label><input type='text' size='50' id='question_text'/><br />
+
+        <label for='answer_1'>Answer1</label><input type='text' size='25' id='answer_1'/><br />
+        <label for='answer_2'>Answer2</label><input type='text' size='25' id='answer_2'/><br />
+        <label for='answer_3'>Answer3</label><input type='text' size='25' id='answer_3'/><br />
+        <label for='answer_4'>Answer4</label><input type='text' size='25' id='answer_4'/><br />
+        <label for='correct_answer'>Correct Answer</label><input type='text' size='50' id='correct_answer'/><br />
+
+
+        <p>Click here to upload the data</p>
+        <button id="startUpload" onclick="startDataUpload()">Start Setting Questions Upload</button>
+        <br />
+        <br />
+        <div id="dataUploadResult">The result of the upload goes here</div>
+        <br />
+        <br />
+      </li>
+      
+
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+      <div id="getUserParticipation"></div>
+      </div>
+
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+      <div id="getAllUserParticipation"></div>
+      </div>
+
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+      <div id="getTop5Socers"></div>
+      </div>
+
+      <div id="Hardest5List"></div>
+
+      </div>
+      </div>
+      </div>
 
       </div>
       <!-- End of Main Content -->
@@ -184,6 +277,7 @@
   <!-- Bootstrap core JavaScript-->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
+  <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="js/leaflet.awesome-markers.js"></script>
   <script src="js/basicMap.js"></script>
   <script src="js/getQuestionData.js"></script>
@@ -193,6 +287,14 @@
   <script src="js/trackLocation.js"> </script>
   <script src="js/getCorrectAnswer.js"> </script>
   <script src="js/getRanking.js"> </script>
+  <script src="js/getTop5Socers.js"> </script>
+  <script src="js/getParticipationRate.js"> </script>
+  <script src="js/getLastWeekPoints.js"> </script>
+  <script src="js/getClosest5Points.js"> </script>
+  <script src="js/getDifficultQuestions.js"> </script>
+  <script src="js/getLast5Question.js"> </script>
+  <script src="js/getUnanswered.js"> </script>
+
   <!-- the following CSS is used to set the size of the Map -->
   <style type="text/css">
       #mapid {
@@ -205,6 +307,7 @@
   function loadMap() {
   getPorts();
   loadLeafletMap();
+  trackLocation();
 }
 
 document.addEventListener('DOMContentLoaded', function() {

@@ -1,57 +1,32 @@
-var client;
-
 function removeQuestionData() {
     alert("Question data will be removed");
-    mymap.removeLayer(formLayer);
+    mymap.removeLayer(questionLayer);
 };
 
-function getQuestionData(){
-    client = new XMLHttpRequest();
-    var url =  "https://developer.cege.ucl.ac.uk:"+ httpsPortNumberAPI + "/getQuestionData/" + httpsPortNumberAPI;
-    client.open("GET", url, true);
-    client.onreadystatechange = processFormData;
-    try{
-        client.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    }
-    catch (e){
-    }
-    client.send();
+function getQuestionData() {
+    var serviceUrl = "https://developer.cege.ucl.ac.uk:"+ httpsPortNumberAPI + "/getQuestionData/" + httpsPortNumberAPI;
+   $.ajax({
+    url: serviceUrl,
+    crossDomain: true,
+    type: "GET",
+    success: function(result){
+        console.log(result); 
+        loadQuestionData(result);
+    }}); //end of the AJAX call
+}// end of getCorrectAnswer
+
+function processQuestionData(result){
+    var questionData = result.responseText; 
+    loadQuestionData(questionData); 
 }
-
-function processFormData(){
-    //Waiting response from server
-    if(client.readyState<4){
-        console.log('waiting for form data')
-    }
-    else if (client.readyState === 4){
-        if (client.status > 199 && client.status < 300){
-            console.log('form data sent.')
-            var FormData = client.responseText;
-            loadFormData(FormData);
-        }
-    }
-}
-
-
-var xhrFormData;
-
-function formDataResponse(){
-    if (xhrFormData.readyState == 4) {
-// once the data is ready, process the data
-        var formData = xhrFormData.responseText;
-        loadFormData(formData);
-    }
-        }
-
 
 // we can also use this to determine distance for the proximity alert
-var formLayer;
+var questionLayer;
 
-function loadFormData(formData) {
-// convert the text received from the server to JSON
-    var formJSON = JSON.parse(formData);
+function loadQuestionData(result) {
+
 // load the geoJSON layer
-    formLayer = L.geoJson(formJSON,
+    questionLayer = L.geoJson(result,
         {       
 
 // use point to layer to create the points
@@ -76,7 +51,7 @@ function loadFormData(formData) {
             return L.marker(latlng).bindPopup(htmlString);
             },
         }).addTo(mymap);
-    mymap.fitBounds(formLayer.getBounds());
+    mymap.fitBounds(questionLayer.getBounds());
 }
 
 var answer;
@@ -107,7 +82,7 @@ function checkAnswer(questionID) {
             getCorrectAnswer();
 
             //Change the puiz point marker to green if the user answer is correct
-            formLayer.eachLayer(function(layer){
+            questionLayer.eachLayer(function(layer){
                 if (layer.feature.properties.id == questionID){
                     return L.marker([layer.getLatLng().lat, layer.getLatLng().lng], {icon: testMarkerGreen}).addTo(mymap); 
                 }
@@ -122,7 +97,7 @@ function checkAnswer(questionID) {
             getCorrectAnswer(); 
             
             //Change the puiz point marker to green if the user answer is correct
-            formLayer.eachLayer(function(layer){
+            questionLayer.eachLayer(function(layer){
                 if (layer.feature.properties.id == questionID){
                     return L.marker([layer.getLatLng().lat, layer.getLatLng().lng], {icon: testMarkerRed}).addTo(mymap); 
                 }
@@ -173,7 +148,7 @@ function closestFormPoint(position) {
 
     // for this example, use the latitude/longitude of warren street
     // in your assignment replace this with the user's location    var userlng = -0.139924;
-    formLayer.eachLayer(function(layer) {
+    questionLayer.eachLayer(function(layer) {
         var distance = calculateDistance(position.coords.latitude, position.coords.longitude,layer.getLatLng().lat, layer.getLatLng().lng, 'K');
         if (distance < minDistance){
             minDistance = distance;
@@ -184,7 +159,7 @@ function closestFormPoint(position) {
             // closer than a given distance - you can check that here
             // using an if statement
             // show the popup for the closest point
-    formLayer.eachLayer(function(layer) {
+    questionLayer.eachLayer(function(layer) {
         if (layer.feature.properties.id == closestFormPoint){
             layer.openPopup();
 
