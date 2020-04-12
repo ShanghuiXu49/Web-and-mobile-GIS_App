@@ -111,4 +111,9 @@ dataUpload.js : Transfer the question form data into Json format and insert it i
 | deleteRecord()  | Delete the question data string into database through AJAX 'POST' command|
 | dataDeleted(data)  |  Process the response from the data server|
 
-getQuestionData.js : Receive the inserted question data in JSON format and display the data in leaflet map
+getQuestionData.js : Receive the inserted question data for current user in JSON format and display the data in leaflet map
+| function  | Description |
+| ------------- | ------------- |
+| removeQuestionData()  | This function will remove the layer of current user's question data from the map container if the layer is passed into this function. It would notify the user that the layer will be removed or indicate that a particular layer has not been loaded. |
+| getQuestionData()  | Get the current user input question data through AJAX 'GET' command|
+| loadQuestionData(result)  | Display the question points into leaflet map and creat a pop-up form if user click the points|
