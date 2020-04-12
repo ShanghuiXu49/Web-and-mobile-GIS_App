@@ -95,25 +95,7 @@ port.xml : Contains user port id data of http and https connections.
 
 ~/www/js : Containing Javascript files required by bootStrap.html .
 
-</br>
-basicMap.js : Load Leaflet map and create custom icons.
-| function  | Description |
-| ------------- | ------------- |
-| onMapClick(e)  | When the user clicks on the map, show a marker at the clicked position and automatically enter the coordinates of the clicked location.|
-</br>
 
-leaflet.awesome-markers.js : Add colorful iconic markers for Leaflet.
-
-</br>
-dataUpload.js : Transfer the question form data into Json format and insert it into database
-| function  | Description |
-| ------------- | ------------- |
-| startDataUpload()  | Convert the user input question data into string|
-| processData(postString)  | Insert the question data string into database through AJAX 'POST' command|
-| dataUploaded(data)  | Process the response from the data server and change the DIV to show the response|
-| deleteRecord()  | Delete the question data string into database through AJAX 'POST' command|
-| dataDeleted(data)  |  Process the response from the data server|
-</br>
 
 getQuestionData.js : Receive the inserted question data for current user in JSON format and display the data in leaflet map
 | function  | Description |
