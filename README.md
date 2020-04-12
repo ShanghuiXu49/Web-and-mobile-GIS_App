@@ -243,6 +243,17 @@ getLast5Question.js : Receive the process last 5 question points data that the u
 | loadLast5Question(result)  | Display the last 5 question points into leaflet map and creat a pop-up form if user click the points|
 </br>
 
+getUnanswered.js : Receive the process unanswered question points include incorrectly answered data that the user answered in JSON format and display the data in leaflet map
+| function  | Description |
+| ------------- | ------------- |
+| removeUnanswered()  | This function will remove the layer of unanswered question points from the map container if the layer is passed into this function. It would notify the user that the layer will be removed or indicate that a particular layer has not been loaded. |
+| getUnanswered()  | Get the unanswered question points data through AJAX 'GET' command|
+| loadUnanswered(result)  | Display the unanswered question points into leaflet map and creat a pop-up form if user click the points|
+| getUnansweredDistance()  | Calculate the distance from the user to unanswered quiz points|
+| closestFormUnansweredPoint(position)  | Determine whether the distance between the user's location and the unswered quiz point is less than the threshold distance, if it is less than the question form will pop up automatically|
+
+</br>
+
 ## 6. Code reference
 A large proportion of codes are adapted from the lab notes of CEGE 0043 Web Mobile and
 GIS by Calire Ellul, including
