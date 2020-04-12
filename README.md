@@ -77,8 +77,7 @@ The files associated te this question setting app are located in the cege0043-ap
 | Add questions  | Tell the user to fill out the form at below the map through alert|
 | Show Question Points | Load all the existing quiz points created by the current user.|
 | Remove Question Points | Remove the existing quiz points created by the current user. |
-| All User Participation Rate | Show a histogram of daily participation rates of the current user during last week, including how many
-questions have been answered and how many answers were correct.|
+| All User Participation Rate | Show a histogram of daily participation rates of the current user during last week, including how many questions have been answered and how many answers were correct.|
 | My User Participation Rate | Show a histogram of daily participation rates of all users in the database during the past week, including how many questions have been answered and how many answers were correct.|
 | Show All Question Points | Display question points added last week by any user in bthe database.|
 | Remove All Question Points| Remove question points added last week.|
