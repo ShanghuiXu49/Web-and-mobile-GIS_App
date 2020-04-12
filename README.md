@@ -82,3 +82,24 @@ The files associated te this question setting app are located in the cege0043-ap
 | Show All Question Points | Display question points added last week by any user in bthe database.|
 | Remove All Question Points| Remove question points added last week.|
 | 5 Hardest Questions| Show a list of the 5 most difficult questions in the database through alert.|
+| Help | Load a new user guide web page for question seting|
+help_question.html : Containing a user guide for question setting. This html file is referenced as 'Help' within index.html .
+
+
+~/www/css : Setting up styles of bootStrap.html (such as fonts and margins) and incorporating the CSS required for custom icon creation.
+
+~/www/ScreenShoot : Containing images required for help_question.html
+
+~/www/res </br >
+port.xml : Contains user port id data of http and https connections.
+
+~/www/js : Containing Javascript files required by bootStrap.html .
+
+basicMap.js : Load Leaflet map and create custom icons.
+| function  | Description |
+| ------------- | ------------- |
+| onMapClick(e)  | When the user clicks on the map, show a marker at the clicked position and automatically enter the coordinates of the clicked location.|
+
+leaflet.awesome-markers.js : Add colorful iconic markers for Leaflet.
+
+dataUpload.js : Transfer the question form data into Json format and insert it into database
