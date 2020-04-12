@@ -172,6 +172,7 @@ utilities.js :
 | Show Unanswered Q | Display question points added last week by any user in bthe database.|
 | Remove Unanswered Q| Remove question points added last week.|
 | Help | Load a new user guide web page for Quiz answering|
+
 help_quiz.html : Containing a user guide for quiz answering. This html file is referenced as 'Help' within boosStrap.html .
 
 
@@ -183,8 +184,8 @@ help_quiz.html : Containing a user guide for quiz answering. This html file is r
 port.xml : Contains user port id data of http and https connections.
 
 ~/www/js : Containing Javascript files required by bootStrap.html .
-
 </br>
+
 getQuestionData.js : Receive the inserted question data for current user in JSON format and display the data in leaflet map
 | function  | Description |
 | ------------- | ------------- |
