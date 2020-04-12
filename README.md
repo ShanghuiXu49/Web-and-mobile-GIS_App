@@ -29,7 +29,7 @@ at https://www.ucl.ac.uk/isd/services/get-connected/remote-working-services/ucl-
 
 ## 2. Deployment
 Procedures to deploy this app:
-1. Clone the source code of this question setting app from Github to CEGE server at home/studentuser/code by typing in the command line (terminal) window for Ubuntu:
+1. Clone the source code of this question setting and quiz answering app from Github to CEGE server at home/studentuser/code by typing in the command line (terminal) window for Ubuntu:
 
      cd /home/studentuser/code </br>
      git clone https://github.com/ucl-geospatial/cege0043-apps-ShanghuiXu49 -b master 
@@ -38,25 +38,42 @@ Procedures to deploy this app:
      cd /home/studentuser/code </br>
      git clone https://github.com/ucl-geospatial/cege0043-data-api-ShanghuiXu49 -b master
      
- 3. Go to the cege0043-data-api-ShanghuiXu49 folder and start the dataAPI server.
+ 3. Go to the cege0043-data-api-ShanghuiXu49 folder and start the app server.
+     cd /home/studentuser/code/cege0043-apps-ShanghuiXu49 </br>
+     pm2 start app.js
+     
+ 4. Go to the cege0043-data-api-ShanghuiXu49 folder and start the dataAPI server.
      cd /home/studentuser/code/cege0043-data-api-ShanghuiXu49 </br>
      pm2 start dataAPI.js
-
- 4. Make sure the dataAPI server is successfully started. If any error occurs, you could enter the debug mode through the command line window by typing
+ 
+ 4. Make sure the dataAPI server is successfully started. If any error occurs, you could enter the debug mode       through the command line window by typing
      cd /home/studentuser/code/cege0043-data-api-ShanghuiXu49 </br>
      node dataAPI.js
 
+
 ## 3. Testing
-Procedures to test this app:
+### 3.1. Testing-Question Setting
+Procedures to test question setting app:
 
 1. Make sure your device is connected to UCL Wifi or UCL VPN.
 2. Make sure the dataAPI server is active.
 3. Mask sure use laptop to start question setting app.
-3. In a browser that supports geolocation access via https connection (such as Chromeor Firefox),
+4. In a browser that supports geolocation access via https connection (such as Chromeor Firefox),
 type the following address to use the question setting
 app.https://developer.cege.ucl.ac.uk:31097/bootStrap.html
-4. While testing the functionality of this map, use of Inspect or Developer mode of the browser
+5. While testing the functionality of this map, use of Inspect or Developer mode of the browser
 to see if any error occurs.
+
+### 3.1. Testing-Quiz Answering
+Procedures to test quiz answering app:
+
+1. Make sure your device is connected to UCL Wifi or UCL VPN.
+2. Make sure the dataAPI and app server is active.
+3. Mask sure use mobile phone to start quiz answering app.
+4. In a browser that supports geolocation access via https connection (such as Chromeor Firefox),
+type the following address to use the question setting
+app.https://developer.cege.ucl.ac.uk:31097/bootStrap.html
+
 
 ## 4. Question setting part file description
 The files associated te this question setting app are located in the cege0043-apps-ShanghuiXu49 folder and several subfolders.
