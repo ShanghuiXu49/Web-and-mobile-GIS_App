@@ -162,8 +162,12 @@ GIS by Calire Ellul, including
 
 The utility of changing div contents of one .html by contents of another .html provided
 by W3 schools.</br>
-The histograms showing daily user participation utilise D3 JavaScript library.</br>
-The legends of D3 graphs are adapted from stackoverflow, accessed 12th April 2020.</br>
-The axis labels of D3 graphs are adapted from bl.ocks.org, accessed 12th April 2020.</br>
-May layers of this app are based on Leaflet.</br>
-The base map data is based on Open Street Map</br>
+The histograms showing daily user participation utilise D3 JavaScript library.
+</br>
+The legends of D3 graphs are adapted from stackoverflow, accessed 12th April 2020.
+</br>
+The axis labels of D3 graphs are adapted from bl.ocks.org, accessed 12th April 2020.
+</br>
+May layers of this app are based on Leaflet.
+</br>
+The base map data is based on Open Street Map.
