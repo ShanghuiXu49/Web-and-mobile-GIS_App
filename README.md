@@ -1,10 +1,5 @@
-# Question Setting App
-A technical guide for a browser-based question setting app. This app helps the user to create a new
-question about a location, add possible answers and upload questions to a database on the web
-server. By using this app, the location of a question could be input by either clicking on a point on a
-Leaflet map or manually typing latitudes and longitudes. This app is also able to retrieve existed
-questions of certain characteristics and information of users from the database.
-
+# Pop-up Quiz App
+A technical guide for a browser-based question setting app and quiz answering. For question setting app, it helps the user to create a new question about a location, add possible answers and upload questions to a database on the web server. By using this app, the location of a question could be input by either clicking on a point on a Leaflet map or manually typing latitudes and longitudes. This app is also able to retrieve existed questions of certain characteristics and information of users from the database. For quiz answering app, it helps the user to answer the quiz question, upload user's answer to a database on the web server.By using this app, the user will be told if their answer is correct or not and how many questions they have answered correctly after the user click the 'Submit Answer' botton. This app is also able to let the user know their ranking compared with other users and the top 5 socers information. 
 ## Table of Contents
 1. System Requirements
 2. Deployment
@@ -75,7 +70,7 @@ type the following address to use the question setting
 app.https://developer.cege.ucl.ac.uk:31097/bootStrap.html
 
 
-## 4. Question setting part file description
+## 4. File description-Question setting
 The files associated te this question setting app are located in the cege0043-apps-ShanghuiXu49 folder and several subfolders.
 
 ~/cege0043-apps-ShanghuiXu49 </br>
@@ -167,8 +162,7 @@ utilities.js :
 | ------------- | ------------- |
 | getPort()  | Get user port numbers based on the type of connections (http or https), which are required to build database connections for data uploading and downloading.|
 
-## 5. Quiz answering part file description
-
+## 5. File description-Quiz answering 
 ### DIV   
 | id  | Description |
 | ------------- | ------------- |
