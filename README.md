@@ -26,3 +26,10 @@ to the Ubuntu Server.
 If you are going to use this app outside the UCL campus (not connected to Eduroam), make
 sure you are connected to UCL VPN by following the instructions
 at https://www.ucl.ac.uk/isd/services/get-connected/remote-working-services/ucl-virtualprivate-network-vpn.
+
+## 2. Deployment
+Procedures to deploy this app:
+1. Clone the source code of this question setting app from Github to CEGE server at home/studentuser/code by typing in the command line (terminal) window for Ubuntu:
+
+cd /home/studentuser/code
+git clone https://github.com/ucl-geospatial/cege0043-apps-ShanghuiXu49 -b master 
