@@ -83,7 +83,7 @@ The files associated te this question setting app are located in the cege0043-ap
 | Remove All Question Points| Remove question points added last week.|
 | 5 Hardest Questions| Show a list of the 5 most difficult questions in the database through alert.|
 | Help | Load a new user guide web page for question seting|
-help_question.html : Containing a user guide for question setting. This html file is referenced as 'Help' within index.html .
+help_question.html : Containing a user guide for question setting. This html file is referenced as 'Help' within boosStrap.html .
 
 
 ~/www/css : Setting up styles of bootStrap.html (such as fonts and margins) and incorporating the CSS required for custom icon creation.
@@ -151,6 +151,61 @@ utilities.js :
 | getPort()  | Get user port numbers based on the type of connections (http or https), which are required to build database connections for data uploading and downloading.|
 
 ## 5. Quiz answering part file description
+
+### DIV   
+| id  | Description |
+| ------------- | ------------- |
+| mapid  | Hold the leaflet map.  |
+| collapseMenu | Hold a sub-menu button for user to load or remove data|
+
+### Menu Button
+| name  | Description |
+| ------------- | ------------- |
+| Load Quiz Points  | Tell the user to fill out the form at below the map through alert|
+| Remove Quiz Points | Load all the existing quiz points created by the current user.|
+| Get Your Ranking | Remove the existing quiz points created by the current user. |
+| Show the Top 5 Socers | Show a histogram of daily participation rates of the current user during last week, including how many questions have been answered and how many answers were correct.|
+| Show Closest 5 Points  | Tell the user to fill out the form at below the map through alert|
+| Remove Closest 5 Points | Load all the existing quiz points created by the current user.|
+| Show Last 5 Points | Display question points added last week by any user in bthe database.|
+| Remove Last 5 Points| Remove question points added last week.|
+| Show Unanswered Q | Display question points added last week by any user in bthe database.|
+| Remove Unanswered Q| Remove question points added last week.|
+| Help | Load a new user guide web page for Quiz answering|
+help_quiz.html : Containing a user guide for quiz answering. This html file is referenced as 'Help' within boosStrap.html .
+
+
+~/www/css : Setting up styles of bootStrap.html (such as fonts and margins) and incorporating the CSS required for custom icon creation.
+
+~/www/ScreenShoot : Containing images required for help_question.html
+
+~/www/res </br >
+port.xml : Contains user port id data of http and https connections.
+
+~/www/js : Containing Javascript files required by bootStrap.html .
+
+</br>
+getQuestionData.js : Receive the inserted question data for current user in JSON format and display the data in leaflet map
+| function  | Description |
+| ------------- | ------------- |
+| removeQuestionData()  | This function will remove the layer of current user's question data from the map container if the layer is passed into this function. It would notify the user that the layer will be removed or indicate that a particular layer has not been loaded. |
+| getQuestionData()  | Get the current user input question data through AJAX 'GET' command|
+| loadQuestionData(result)  | Display the question points into leaflet map and creat a pop-up form if user click the points|
+| checkAnswer(questionID)  | Tell the user if their answer is correct or not through alert|
+| startAnswerupload()  | Alert the the string of user's answer|
+| processAnswers(postString)  | Insert the string of user's answer into database through AJAX's 'POST' command|
+| closestFormPoint(position)  | Determine whether the distance between the user's location and the question point is less than the threshold distance, if it is less than the question form will pop up automatically|
+</br>
+
+trackLocation.js : Track the user's location and display it on the map. In addition, the distance between the user and the question point is calculated.
+| function  | Description |
+| ------------- | ------------- |
+| trackLocation()  | This function will track the user's location |
+| showPosition(position)  | This function will display the user's location and delete the previous locarion marker|
+| getDistance()  | Calculate the distance from the user to quiz points|
+| calculateDistance(lat1, lon1, lat2, lon2, unit)  | Calculate distance given two sets of coordinates|
+</br>
+
 
 ## 6. Code reference
 A large proportion of codes are adapted from the lab notes of CEGE 0043 Web Mobile and
