@@ -43,7 +43,7 @@ Procedures to deploy this app:
      pm2 start dataAPI.js
 
  4. Make sure the dataAPI server is successfully started. If any error occurs, you could enter the debug mode through the command line window by typing
-     cd /home/studentuser/code/uceslxw-server </br>
+     cd /home/studentuser/code/cege0043-data-api-ShanghuiXu49 </br>
      node dataAPI.js
 
 
