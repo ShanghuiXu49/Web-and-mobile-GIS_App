@@ -4,8 +4,9 @@ A technical guide for a browser-based question setting app and quiz answering. F
 1. System Requirements
 2. Deployment
 3. Testing
-4. File description
-5. Code reference
+4. File description-Question setting
+5. File description-Quiz answering
+6. Code reference
 
 ## 1. System Requirements
 In order to enable the full functionality of this app, a browser that supports geolocation access
