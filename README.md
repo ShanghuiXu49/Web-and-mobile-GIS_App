@@ -58,7 +58,7 @@ app.https://developer.cege.ucl.ac.uk:31097/bootStrap.html
 4. While testing the functionality of this map, use of Inspect or Developer mode of the browser
 to see if any error occurs.
 
-## 4. File description
+## 4. Question setting part file description
 The files associated te this question setting app are located in the cege0043-apps-ShanghuiXu49 folder and several subfolders.
 
 ~/cege0043-apps-ShanghuiXu49 </br>
@@ -144,3 +144,21 @@ getDifficultQuestion.js : Receive the inserted question data for all user in JSO
 | getDifficultQuestions()  | Get the 5 most difficult qustions among all user inserted question data through AJAX 'GET' command from database|
 | loadDifficultQuestion(result)  | Process the 5 most difficult qustions data into alert |
 </br>
+
+utilities.js :
+| function  | Description |
+| ------------- | ------------- |
+| getPort()  | Get user port numbers based on the type of connections (http or https), which are required to build database connections for data uploading and downloading.|
+
+## 5. Quiz answering part file description
+
+## 6. Code reference
+A large proportion of codes are adapted from the lab notes of CEGE 0043 Web Mobile and
+GIS by Calire Ellul, including
+
+   Basic structures of bootStrap.html </br>
+   Functions related to events detector, data downloading, data uploading, data processing,
+   user location tracking, displaying map layers, and getting port numbers.
+
+The utility of changing div contents of one .html by contents of another .html provided
+by W3 schools.
