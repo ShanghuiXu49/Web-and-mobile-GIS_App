@@ -69,4 +69,17 @@ The files associated te this question setting app are located in the cege0043-ap
 | id  | Description |
 | ------------- | ------------- |
 | mapid  | Hold the leaflet map.  |
-| buttons  | Hold a button below the map to zoom to user's current location. </br> Hold a button to removes all layers except the base map and user location marker. |
+| collapseMenu | Hold a sub-menu button for user to load or remove data|
+
+### Menu Button
+| name  | Description |
+| ------------- | ------------- |
+| Add questions  | Tell the user to fill out the form at below the map through alert|
+| Show Question Points | Load all the existing quiz points created by the current user.|
+| Remove Question Points | Remove the existing quiz points created by the current user. |
+| All User Participation Rate | Show a histogram of daily participation rates of the current user during last week, including how many
+questions have been answered and how many answers were correct.|
+| My User Participation Rate | Show a histogram of daily participation rates of all users in the database during the past week, including how many questions have been answered and how many answers were correct.|
+| Show All Question Points | Display question points added last week by any user in bthe database.|
+| Remove All Question Points| Remove question points added last week.|
+| 5 Hardest Questions| Show a list of the 5 most difficult questions in the database through alert.|
