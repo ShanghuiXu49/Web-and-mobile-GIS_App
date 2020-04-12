@@ -207,7 +207,19 @@ trackLocation.js : Track the user's location and display it on the map. In addit
 | calculateDistance(lat1, lon1, lat2, lon2, unit)  | Calculate distance given two sets of coordinates|
 </br>
 
+getCorrectAnswer.js : Get the correct answer number from database and process it.
+| function  | Description |
+| ------------- | ------------- |
+| getCorrectAnswer()  | Get the correct answer number from database through AJAX 'GET' command|
+| processCorrectAnswer(result)  | Alert user how many questions they have answered correctly so far|
+</br>
 
+getRanking.js : Get the ranking data from database and process it.
+| function  | Description |
+| ------------- | ------------- |
+| getRanking()  | Get the ranking data from database through AJAX 'GET' command|
+| processRanking(result)  | Alert user what ranking they are compared with all other users so far|
+</br>
 ## 6. Code reference
 A large proportion of codes are adapted from the lab notes of CEGE 0043 Web Mobile and
 GIS by Calire Ellul, including
