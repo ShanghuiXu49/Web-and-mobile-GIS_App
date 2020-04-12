@@ -46,4 +46,14 @@ Procedures to deploy this app:
      cd /home/studentuser/code/cege0043-data-api-ShanghuiXu49 </br>
      node dataAPI.js
 
+## 3. Testing
+Procedures to test this app:
 
+1. Make sure your device is connected to UCL Wifi or UCL VPN.
+2. Make sure the dataAPI server is active.
+3. Mask sure use laptop to start question setting app.
+3. In a browser that supports geolocation access via https connection (such as Chromeor Firefox),
+type the following address to use the question setting
+app.https://developer.cege.ucl.ac.uk:31097/bootStrap.html
+4. While testing the functionality of this map, use of Inspect or Developer mode of the browser
+to see if any error occurs.
