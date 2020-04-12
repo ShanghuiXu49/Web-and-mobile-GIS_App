@@ -95,16 +95,16 @@ port.xml : Contains user port id data of http and https connections.
 
 ~/www/js : Containing Javascript files required by bootStrap.html .
 
-
+</br>
 basicMap.js : Load Leaflet map and create custom icons.
 | function  | Description |
 | ------------- | ------------- |
 | onMapClick(e)  | When the user clicks on the map, show a marker at the clicked position and automatically enter the coordinates of the clicked location.|
-
+</br>
 
 leaflet.awesome-markers.js : Add colorful iconic markers for Leaflet.
 
-
+</br>
 dataUpload.js : Transfer the question form data into Json format and insert it into database
 | function  | Description |
 | ------------- | ------------- |
@@ -113,7 +113,7 @@ dataUpload.js : Transfer the question form data into Json format and insert it i
 | dataUploaded(data)  | Process the response from the data server and change the DIV to show the response|
 | deleteRecord()  | Delete the question data string into database through AJAX 'POST' command|
 | dataDeleted(data)  |  Process the response from the data server|
-
+</br>
 
 getQuestionData.js : Receive the inserted question data for current user in JSON format and display the data in leaflet map
 | function  | Description |
@@ -121,14 +121,14 @@ getQuestionData.js : Receive the inserted question data for current user in JSON
 | removeQuestionData()  | This function will remove the layer of current user's question data from the map container if the layer is passed into this function. It would notify the user that the layer will be removed or indicate that a particular layer has not been loaded. |
 | getQuestionData()  | Get the current user input question data through AJAX 'GET' command|
 | loadQuestionData(result)  | Display the question points into leaflet map and creat a pop-up form if user click the points|
-
+</br>
 
 getParticipationRate.js : Receive the Participation Rate data for current and all user in JSON format and display the data in D3 Graph
 | function  | Description |
 | ------------- | ------------- |
 | getParticipationRateUser()  | Receive the Participation Rate data for current user from database and show the data in histogram of D3 Graph |
 | getParticipationRateAll()  | Receive the Participation Rate data for all user from database and show the data in histogram of D3 Graph|
-
+</br>
 
 getLastWeekPoints.js : Receive the inserted question data for all user in JSON format and display the data in leaflet map
 | function  | Description |
@@ -136,3 +136,11 @@ getLastWeekPoints.js : Receive the inserted question data for all user in JSON f
 | removeLastWeekPoints()  | This function will remove the layer of all user's question data from the map container if the layer is passed into this function. It would notify the user that the layer will be removed or indicate that a particular layer has not been loaded. |
 | getLastWeekPoints()  | Get the all user input question data through AJAX 'GET' command|
 | loadLastPointsData(result)  | Display the question points into leaflet map |
+</br>
+
+getDifficultQuestion.js : Receive the inserted question data for all user in JSON format and display the data in leaflet map
+| function  | Description |
+| ------------- | ------------- |
+| getDifficultQuestions()  | Get the 5 most difficult qustions among all user inserted question data through AJAX 'GET' command from database|
+| loadDifficultQuestion(result)  | Process the 5 most difficult qustions data into alert |
+</br>
