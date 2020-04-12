@@ -65,10 +65,14 @@ The files associated te this question setting app are located in the cege0043-ap
     bootStrap.html : The main html file of this app, through which user could use all the question
     setting functionality. It interconnects all of the resources within the ~/cege0043-apps-ShanghuiXu49 folder       and makes use of them. This html contains several divs and menu buttons.
     
-    ###DIV
     | id | Description |
     | --- | --- |
     | mapid | Hold the leaflet map.|
     | buttons | Hold a button below the map to zoom to user's current location. 
      Hold a button to removes all layers except the base map and user location marker. |
     
+    
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
