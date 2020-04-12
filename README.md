@@ -103,3 +103,12 @@ basicMap.js : Load Leaflet map and create custom icons.
 leaflet.awesome-markers.js : Add colorful iconic markers for Leaflet.
 
 dataUpload.js : Transfer the question form data into Json format and insert it into database
+| function  | Description |
+| ------------- | ------------- |
+| startDataUpload()  | Convert the user input question data into string|
+| processData(postString)  | Insert the question data string into database through AJAX 'POST' command|
+| dataUploaded(data)  | Process the response from the data server and change the DIV to show the response|
+| deleteRecord()  | Delete the question data string into database through AJAX 'POST' command|
+| dataDeleted(data)  |  Process the response from the data server|
+
+getQuestionData.js : Receive the inserted question data in JSON format and display the data in leaflet map
