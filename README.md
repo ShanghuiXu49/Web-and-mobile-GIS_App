@@ -220,6 +220,29 @@ getRanking.js : Get the ranking data from database and process it.
 | getRanking()  | Get the ranking data from database through AJAX 'GET' command|
 | processRanking(result)  | Alert user what ranking they are compared with all other users so far|
 </br>
+
+getTop5Socers.js : Get the top 5 socers data from database and show it as D3 histogram.
+| function  | Description |
+| ------------- | ------------- |
+| getTop5Socers()  | This function will get the top 5 socers data from database and show it as D3 histogram|
+</br>
+
+getClosest5Points.js : Receive the process closest 5 question points data for current user location in JSON format and display the data in leaflet map
+| function  | Description |
+| ------------- | ------------- |
+| removeClosest5Points()  | This function will remove the layer of closest 5 question points from the map container if the layer is passed into this function. It would notify the user that the layer will be removed or indicate that a particular layer has not been loaded. |
+| getClosest5Points()  | Get the closest 5 question points data through AJAX 'GET' command|
+| loadClosestPoint(result)  | Display the closest 5 question points into leaflet map and creat a pop-up form if user click the points|
+</br>
+
+getLast5Question.js : Receive the process last 5 question points data that the user answered in JSON format and display the data in leaflet map
+| function  | Description |
+| ------------- | ------------- |
+| removeLast5Question()  | This function will remove the layer of last 5 question points from the map container if the layer is passed into this function. It would notify the user that the layer will be removed or indicate that a particular layer has not been loaded. |
+| getLast5Question()  | Get the last 5 question points data through AJAX 'GET' command|
+| loadLast5Question(result)  | Display the last 5 question points into leaflet map and creat a pop-up form if user click the points|
+</br>
+
 ## 6. Code reference
 A large proportion of codes are adapted from the lab notes of CEGE 0043 Web Mobile and
 GIS by Calire Ellul, including
