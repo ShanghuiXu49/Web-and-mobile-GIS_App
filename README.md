@@ -4,3 +4,10 @@ question about a location, add possible answers and upload questions to a databa
 server. By using this app, the location of a question could be input by either clicking on a point on a
 Leaflet map or manually typing latitudes and longitudes. This app is also able to retrieve existed
 questions of certain characteristics and information of users from the database.
+
+## Table of Contents
+1. System Requirements
+2. Deployment
+3. Testing
+4. File description
+5. Code reference
