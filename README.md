@@ -95,7 +95,7 @@ port.xml : Contains user port id data of http and https connections.
 
 ~/www/js : Containing Javascript files required by bootStrap.html .
 
-</br>
+
 basicMap.js : Load Leaflet map and create custom icons. </br>
 | function  | Description |
 | ------------- | ------------- |
