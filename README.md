@@ -33,3 +33,17 @@ Procedures to deploy this app:
 
      cd /home/studentuser/code </br>
      git clone https://github.com/ucl-geospatial/cege0043-apps-ShanghuiXu49 -b master 
+     
+ 2. Clone the source code of the corresponding dataAPI server from Github to CEGE server at home/studentuser/code.
+     cd /home/studentuser/code </br>
+     git clone https://github.com/ucl-geospatial/cege0043-data-api-ShanghuiXu49 -b master
+     
+ 3. Go to the cege0043-data-api-ShanghuiXu49 folder and start the dataAPI server.
+     cd /home/studentuser/code/cege0043-data-api-ShanghuiXu49 </br>
+     pm2 start dataAPI.js
+
+ 4. Make sure the dataAPI server is successfully started. If any error occurs, you could enter the debug mode through the command line window by typing
+     cd /home/studentuser/code/uceslxw-server </br>
+     node dataAPI.js
+
+
