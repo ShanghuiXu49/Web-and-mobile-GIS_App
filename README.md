@@ -32,8 +32,8 @@ Procedures to deploy this app:
      
  2.Git will ask you to enter the user name and password, please enter the following user name and password. 
 
-   User name: ShanghuiXu49</br>
-   Password: 629yaml1119249
+     User name: ShanghuiXu49</br>
+     Password: 629yaml1119249
      
  3. Clone the source code of the corresponding dataAPI server from Github to CEGE server at home/studentuser/code.
      cd /home/studentuser/code </br>
@@ -41,8 +41,8 @@ Procedures to deploy this app:
      
  4.Git will ask you to enter the user name and password, please enter the following user name and password. 
 
-   User name: ShanghuiXu49</br>
-   Password: 629yaml1119249
+     User name: ShanghuiXu49</br>
+     Password: 629yaml1119249
    
  5. Go to the cege0043-data-api-ShanghuiXu49 folder and start the app server.
      cd /home/studentuser/code/cege0043-apps-ShanghuiXu49 </br>
