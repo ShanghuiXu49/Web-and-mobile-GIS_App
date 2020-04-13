@@ -122,20 +122,6 @@
         </li>
 
         <li class="nav-item d-lg-none" >
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Closest 5 Points</span>
-          </a>
-          <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="#" onclick="getClosest5Points();";>Show Closest 5 Points</a>
-              <a class="collapse-item" href="#" 
-              onclick="removeClosest5Points();">Remove Closest 5 Points</a>
-            </div>
-          </div>
-        </li>
-
-        <li class="nav-item d-lg-none" >
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
             <i class="fas fa-fw fa-cog"></i>
             <span>Last 5 Questions</span>
@@ -187,6 +173,20 @@
               <a class="collapse-item" href="#" onclick="getLastWeekPoints()";>Show All Question Points</a>
               <a class="collapse-item" href="#" 
               onclick="removeLastWeekPoints();">Remove All Question Points</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item d-none d-lg-block" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Closest 5 Points</span>
+          </a>
+          <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="#" onclick="getClosest5Points();";>Show Closest 5 Points</a>
+              <a class="collapse-item" href="#" 
+              onclick="removeClosest5Points();">Remove Closest 5 Points</a>
             </div>
           </div>
         </li>
