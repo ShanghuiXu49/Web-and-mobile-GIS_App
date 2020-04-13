@@ -91,7 +91,7 @@
         </li>
 
 
-        <li class="nav-item d-lg-none" >
+        <li class="nav-item d-none d-md-block d-lg-none" >
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
             <i class="fas fa-fw fa-cog"></i>
             <span>Quiz Points</span>
@@ -105,7 +105,7 @@
           </div>
         </li>
 
-        <li class="nav-item d-lg-none" >
+        <li class="nav-item d-none d-md-block d-lg-none" >
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getRanking();" aria-expanded="true" aria-controls="collapseOne">
             <!-- the next line is the cog image -->
             <i class="fas fa-fw fa-cog"></i>
@@ -113,7 +113,7 @@
           </a>
         </li>
 
-        <li class="nav-item d-lg-none" >
+        <li class="nav-item d-none d-md-block d-lg-none" >
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getTop5Socers();" aria-expanded="true" aria-controls="collapseOne">
             <!-- the next line is the cog image -->
             <i class="fas fa-fw fa-cog"></i>
@@ -121,7 +121,7 @@
           </a>
         </li>
 
-        <li class="nav-item d-lg-none" >
+        <li class="nav-item d-none d-md-block d-lg-none" >
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
             <i class="fas fa-fw fa-cog"></i>
             <span>Last 5 Questions</span>
@@ -135,7 +135,7 @@
           </div>
         </li>
 
-        <li class="nav-item d-lg-none" >
+        <li class="nav-item d-none d-md-block d-lg-none" >
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
             <i class="fas fa-fw fa-cog"></i>
             <span>Unanswered Questions</span>
@@ -198,6 +198,75 @@
             <span>5 Hardest Questions</span>
           </a>
         </li>
+
+        <!-- Menu for sm or xs device -->
+
+        <li class="nav-item d-none d-sm-block d-xs-block d-md-none" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getQuestionData();getDistance();" aria-expanded="true" aria-controls="collapseOne">
+            <!-- the next line is the cog image -->
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Load Quiz Points</span>
+          </a>
+        </li>
+
+
+        <li class="nav-item d-none d-sm-block d-xs-block d-md-none" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="removeQuestionData();" aria-expanded="true" aria-controls="collapseOne">
+            <!-- the next line is the cog image -->
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Remove Quiz Points</span>
+          </a>
+        </li>
+
+        <li class="nav-item d-none d-sm-block d-xs-block d-md-none" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getRanking();" aria-expanded="true" aria-controls="collapseOne">
+            <!-- the next line is the cog image -->
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Get Your Ranking</span>
+          </a>
+        </li>
+
+        <li class="nav-item d-none d-sm-block d-xs-block d-md-none" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getTop5Socers();" aria-expanded="true" aria-controls="collapseOne">
+            <!-- the next line is the cog image -->
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Show the Top 5 Scorers</span>
+          </a>
+        </li>
+
+        <li class="nav-item d-none d-sm-block d-xs-block d-md-none" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getLast5Question();" aria-expanded="true" aria-controls="collapseOne">
+            <!-- the next line is the cog image -->
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Show Last 5 Questions</span>
+          </a>
+        </li>
+
+        <li class="nav-item d-none d-sm-block d-xs-block d-md-none" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="removeLast5Question();" aria-expanded="true" aria-controls="collapseOne">
+            <!-- the next line is the cog image -->
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Remove Last 5 Questions</span>
+          </a>
+        </li>
+
+        <li class="nav-item d-none d-sm-block d-xs-block d-md-none" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="getUnanswered();" aria-expanded="true" aria-controls="collapseOne">
+            <!-- the next line is the cog image -->
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Show Unanswered Questions</span>
+          </a>
+        </li>
+
+        <li class="nav-item d-none d-sm-block d-xs-block d-md-none" >
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="" onclick="removeUnanswered();" aria-expanded="true" aria-controls="collapseOne">
+            <!-- the next line is the cog image -->
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Remove Unanswered Questions</span>
+          </a>
+        </li>
+
+        <!-- End of menu for sm or xs device -->
 
         <li class="nav-item d-none d-lg-block" >
           <a class="nav-link collapsed" href="https://developer.cege.ucl.ac.uk:31097/help_question.html"><i class="fas fa-fw fa-cog" role="presentation"></i>
