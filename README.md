@@ -1,5 +1,5 @@
 # Pop-up Quiz App
-A technical guide for a browser-based question setting app and quiz answering. For question setting app, it helps the user to create a new question about a location, add possible answers and upload questions to a database on the web server. By using this app, the location of a question could be input by either clicking on a point on a Leaflet map or manually typing latitudes and longitudes. This app is also able to retrieve existed questions of certain characteristics and information of users from the database. For quiz answering app, it helps the user to answer the quiz question, upload user's answer to a database on the web server.By using this app, the user will be told if their answer is correct or not and how many questions they have answered correctly after the user click the 'Submit Answer' botton. This app is also able to let the user know their ranking compared with other users and the top 5 socers information. 
+A technical guide for a browser-based question setting app and quiz answering. For question setting app, it helps the user to create a new question about a location, add possible answers and upload questions to a database on the web server. By using this app, the location of a question could be input by either clicking on a point on a Leaflet map or manually typing latitudes and longitudes. This app is also able to retrieve existed questions of certain characteristics and information of users from the database. For quiz answering app, it helps the user to answer the quiz question, upload user's answer to a database on the web server.By using this app, the user will be told if their answer is correct or not and how many questions they have answered correctly after the user click the 'Submit Answer' botton. This app is also able to let the user know their ranking compared with other users and the top 5 scorers’ information. 
 ## Table of Contents
 1. System Requirements
 2. Deployment
@@ -236,7 +236,7 @@ getRanking.js : Get the ranking data from database and process it.
 getTop5Socers.js : Get the top 5 socers data from database and show it as D3 histogram.
 | function  | Description |
 | ------------- | ------------- |
-| getTop5Socers()  | This function will get the top 5 socers data from database and show it as D3 histogram|
+| getTop5Socers()  | This function will get the top 5 scorers’ data from database and show it as D3 histogram|
 </br>
 
 getClosest5Points.js : Receive the process closest 5 question points data for current user location in JSON format and display the data in leaflet map
