@@ -28,21 +28,31 @@ Procedures to deploy this app:
 1. Clone the source code of this question setting and quiz answering app from Github to CEGE server at home/studentuser/code by typing in the command line (terminal) window for Ubuntu:
 
      cd /home/studentuser/code </br>
-     git clone https://github.com/ucl-geospatial/cege0043-apps-ShanghuiXu49 -b master 
+     git clone https://github.com/ucl-geospatial/cege0043-apps-ShanghuiXu49 -b master
      
- 2. Clone the source code of the corresponding dataAPI server from Github to CEGE server at home/studentuser/code.
+ 2.Git will ask you to enter the user name and password, please enter the following user name and password. 
+
+     User name: ShanghuiXu49</br>
+     Password: 629yaml1119249
+     
+ 3. Clone the source code of the corresponding dataAPI server from Github to CEGE server at home/studentuser/code.
      cd /home/studentuser/code </br>
      git clone https://github.com/ucl-geospatial/cege0043-data-api-ShanghuiXu49 -b master
      
- 3. Go to the cege0043-data-api-ShanghuiXu49 folder and start the app server.
+ 4.Git will ask you to enter the user name and password, please enter the following user name and password. 
+
+     User name: ShanghuiXu49</br>
+     Password: 629yaml1119249
+   
+ 5. Go to the cege0043-data-api-ShanghuiXu49 folder and start the app server.
      cd /home/studentuser/code/cege0043-apps-ShanghuiXu49 </br>
      pm2 start app.js
      
- 4. Go to the cege0043-data-api-ShanghuiXu49 folder and start the dataAPI server.
+ 6. Go to the cege0043-data-api-ShanghuiXu49 folder and start the dataAPI server.
      cd /home/studentuser/code/cege0043-data-api-ShanghuiXu49 </br>
      pm2 start dataAPI.js
  
- 4. Make sure the dataAPI server is successfully started. If any error occurs, you could enter the debug mode       through the command line window by typing
+ 7. Make sure the dataAPI server is successfully started. If any error occurs, you could enter the debug mode       through the command line window by typing
      cd /home/studentuser/code/cege0043-data-api-ShanghuiXu49 </br>
      node dataAPI.js
 
